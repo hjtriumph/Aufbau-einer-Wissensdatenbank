@@ -1,0 +1,18 @@
+[
+  {
+    "method": "llm",
+    "n_cases": 10,
+    "avg_completeness": 0.14,
+    "avg_key_point_coverage": 0.3279,
+    "avg_answer_relevance": 0.51,
+    "avg_latency_sec": 5.6043
+  },
+  {
+    "method": "fewshot_1",
+    "n_cases": 10,
+    "avg_completeness": 0.74,
+    "avg_key_point_coverage": 0.6731,
+    "avg_answer_relevance": 0.81,
+    "avg_latency_sec": 5.7557
+  }
+]

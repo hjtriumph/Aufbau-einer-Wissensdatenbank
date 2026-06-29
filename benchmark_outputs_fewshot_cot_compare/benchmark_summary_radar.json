@@ -1,0 +1,18 @@
+[
+  {
+    "method": "fewshot_cot",
+    "reasoning_quality": 0.89,
+    "completeness": 0.93,
+    "latency_score": 0.1991,
+    "avg_latency_sec": 7.9605,
+    "n_cases": 10
+  },
+  {
+    "method": "fewshot_no_cot",
+    "reasoning_quality": 0.5,
+    "completeness": 0.7,
+    "latency_score": 1.0,
+    "avg_latency_sec": 1.585,
+    "n_cases": 10
+  }
+]

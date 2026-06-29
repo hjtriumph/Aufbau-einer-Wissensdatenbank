@@ -1,0 +1,1366 @@
+case_id,question,question_type,difficulty,method,num_examples,gold_answer,answer,completeness,key_point_coverage,answer_relevance,latency_sec,matched_key_points,key_points,judge_reason,notes,expected_evidence
+case_001,Does adding occupancy data improve heating and electricity load forecasting in hotels? Give the main conclusion and the reported NRMSE numbers.,evidence_grounded_conclusion,easy,llm,,"Yes, but only slightly overall. In the ED model, heating NRMSE improves from 4.91% to 4.90%, and electricity NRMSE improves from 7.20% to 7.07% when occupancy is included.","1) Conclusion  
+Yes, adding occupancy data improves heating and electricity load forecasting in hotels. Studies report that occupancy-based models reduce forecasting errors compared to models using only time and weather variables.
+
+2) Explanation  
+In hotel buildings, occupancy patterns significantly influence internal heat gains, domestic hot water use, and electricity consumption (e.g., lighting, appliances, HVAC). Incorporating actual or predicted occupancy data into load forecasting models (e.g., neural networks, regression, or machine learning) leads to more accurate predictions.  
+
+Reported NRMSE (Normalized Root Mean Square Error) numbers vary by study, but typical improvements include:  
+- For heating load: NRMSE decreases from around 12–15% (without occupancy) to 8–10% (with occupancy).  
+- For electricity load: NRMSE decreases from around 10–13% (without occupancy) to 6–9% (with occupancy).  
+
+Exact values depend on the hotel type, climate, data granularity, and modeling approach.
+
+3) Confidence / Limits  
+I am moderately confident in these general trends and NRMSE ranges, as they are based on published research in building energy forecasting. However, specific NRMSE numbers can vary widely between studies. I cannot provide exact citations or guarantee that these numbers apply to every hotel scenario. For precise figures, consulting the original literature is recommended.",0.0,0.375,0.5,5.6232,"[""heating"", ""electricity"", ""ED model""]","[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","The model answer does not include the specific NRMSE numbers from the reference (4.91%, 4.90%, 7.20%, 7.07%) or mention the ED model, and instead provides generic ranges. It partially addresses the question by stating that occupancy improves forecasting, but fails to give the required key points.",Occupancy paper: main abstract result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}]"
+case_001,Does adding occupancy data improve heating and electricity load forecasting in hotels? Give the main conclusion and the reported NRMSE numbers.,evidence_grounded_conclusion,easy,fewshot_0,0,"Yes, but only slightly overall. In the ED model, heating NRMSE improves from 4.91% to 4.90%, and electricity NRMSE improves from 7.20% to 7.07% when occupancy is included.","1) Conclusion  
+Adding occupancy data yields only a marginal improvement in heating and electricity load forecasting accuracy for hotels. The effect is context-dependent and more noticeable for electricity prediction than for heating.
+
+2) Explanation (bullet points)  
+- For the ED model, the average NRMSE for heating decreased from 4.91% (without occupancy) to 4.90% (with occupancy).  
+- For electricity, the average NRMSE decreased from 7.20% (without occupancy) to 7.07% (with occupancy).  
+- The improvement is slight, with a more pronounced benefit in electricity forecasting.  
+- The impact of occupancy is stronger when time features are excluded, suggesting that time features already capture many occupancy-related patterns.  
+- In some cases, occupancy can even degrade performance (e.g., for certain heating labels in Hotel 1 and Hotel 2, the NRMSE increased when occupancy was added).  
+
+3) Evidence (source/page/chunk + short summary)  
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=17  
+  Summary: Reports average NRMSE for heating (4.91% without occupancy, 4.90% with) and electricity (7.20% without, 7.07% with). States that occupancy slightly improves accuracy, especially for electricity.  
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=16  
+  Summary: Shows detailed NRMSE values per hotel and label, including cases where occupancy increases NRMSE (e.g., for ˙QSP in Hotel 1: 4.629% without vs. 4.640% with; for Pel in Hotel 1: 19.266% without vs. 19.879% with).  
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=6 | chunk=21  
+  Summary: Conclusion section restates the average NRMSE reductions and notes that the effect is context-dependent and stronger when time features are excluded.  
+
+4) Assumptions & Scope  
+- The analysis is based on LSTM-based models (ED and standard LSTM) applied to two hotels with different occupancy patterns.  
+- The reported NRMSE values are averages across both configurations (with and without time features).  
+- The study focuses on hotel buildings; results may differ for other building types (e.g., offices).  
+- Occupancy data is treated as a single feature; the model may not capture complex occupancy dynamics.  
+
+5) Suggested Next Retrieval  
+- Search for: ""occupancy impact on load forecasting in office buildings NRMSE""  
+- Search for: ""LSTM occupancy feature importance hotel load prediction""  
+- Search for: ""comparison of occupancy vs time features in building energy forecasting""",1.0,1.0,1.0,16.189,"[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","The model answer correctly states that occupancy data yields only a slight improvement, provides the NRMSE values for heating (4.91% to 4.90%) and electricity (7.20% to 7.07%) in the ED model, and covers all required key points. The answer is fully relevant and directly addresses the question.",Occupancy paper: main abstract result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}]"
+case_001,Does adding occupancy data improve heating and electricity load forecasting in hotels? Give the main conclusion and the reported NRMSE numbers.,evidence_grounded_conclusion,easy,fewshot_1,1,"Yes, but only slightly overall. In the ED model, heating NRMSE improves from 4.91% to 4.90%, and electricity NRMSE improves from 7.20% to 7.07% when occupancy is included.","1) Conclusion
+Yes, adding occupancy data slightly improves both heating and electricity load forecasting in hotels, with a more noticeable benefit for electricity prediction.
+
+2) Explanation (bullet points)
+- For heating forecasting, the average NRMSE decreases from 4.91% (without occupancy) to 4.90% (with occupancy).
+- For electricity forecasting, the average NRMSE decreases from 7.20% (without occupancy) to 7.07% (with occupancy).
+- The improvement is described as ""slight"" overall, but more noticeable for electricity.
+- The impact of occupancy is context-dependent and stronger when time features are excluded.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=17: ""For the ED model, the average NRMSE across all heating datasets is 4.91% without occupancy and 4.90% with it. For electricity forecasting, the average NRMSE is 7.20% without occupancy and 7.07% with occupancy.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=6 | chunk=21: ""For heating forecasts, the inclusion of occupancy data reduced the average NRMSE from 4.91% to 4.90%, while for electricity it decreased from 7.20% to 7.07%.""
+
+4) Assumptions & Scope
+- The results are based on LSTM-based models (ED and LSTM architectures) applied to real data from two hotels with different usage patterns.
+- The improvement is context-dependent and may vary based on the specific hotel, prediction target, and whether time features are included.
+
+5) Suggested Next Retrieval
+occupancy feature importance hotel heating electricity LSTM time features",1.0,1.0,1.0,6.241,"[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","The model answer correctly states that occupancy data improves forecasting slightly, provides the NRMSE values for heating (4.91% to 4.90%) and electricity (7.20% to 7.07%) in the ED model, and includes all required key points. The answer is fully relevant and complete.",Occupancy paper: main abstract result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}]"
+case_001,Does adding occupancy data improve heating and electricity load forecasting in hotels? Give the main conclusion and the reported NRMSE numbers.,evidence_grounded_conclusion,easy,fewshot_3,3,"Yes, but only slightly overall. In the ED model, heating NRMSE improves from 4.91% to 4.90%, and electricity NRMSE improves from 7.20% to 7.07% when occupancy is included.","1) Conclusion
+Yes, adding occupancy data slightly improves both heating and electricity load forecasting in hotels, with a more noticeable benefit for electricity prediction. The improvement is marginal overall.
+
+2) Explanation
+- For heating load forecasting, the average NRMSE decreased from 4.91% (without occupancy) to 4.90% (with occupancy).
+- For electricity load forecasting, the average NRMSE decreased from 7.20% (without occupancy) to 7.07% (with occupancy).
+- The impact of occupancy was stronger when time features were excluded, suggesting that time features already encode many occupancy-related patterns.
+- The effect is context-dependent and varies by hotel and usage type.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=17: ""For the ED model, the average NRMSE across all heating datasets is 4.91% without occupancy and 4.90% with it. For electricity forecasting, the average NRMSE is 7.20% without occupancy and 7.07% with occupancy.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=6 | chunk=21: ""For heating forecasts, the inclusion of occupancy data reduced the average NRMSE from 4.91% to 4.90%, while for electricity it decreased from 7.20% to 7.07%.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=5 | chunk=18: ""The influence of occupancy is greater when time features are excluded... This suggests that time features already encode many occupancy-related patterns.""
+
+4) Assumptions & Scope
+- Results are based on LSTM-based models (ED and LSTM architectures) applied to two hotels with different usage patterns.
+- The study uses real data from hotels; results may differ for other building types (e.g., office buildings).
+- The reported NRMSE values are averages across both configurations with and without time features.
+
+5) Suggested Next Retrieval
+occupancy feature importance hotel heating electricity LSTM NRMSE time features excluded",1.0,1.0,1.0,6.9518,"[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","The model answer clearly states the main conclusion (slightly improves) and reports all required NRMSE numbers (heating 4.91% to 4.90%, electricity 7.20% to 7.07%) for the ED model, covering all key points. The answer directly addresses the question about occupancy data improving forecasting in hotels.",Occupancy paper: main abstract result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}]"
+case_001,Does adding occupancy data improve heating and electricity load forecasting in hotels? Give the main conclusion and the reported NRMSE numbers.,evidence_grounded_conclusion,easy,fewshot_5,5,"Yes, but only slightly overall. In the ED model, heating NRMSE improves from 4.91% to 4.90%, and electricity NRMSE improves from 7.20% to 7.07% when occupancy is included.","1) Conclusion
+Yes, adding occupancy data slightly improves both heating and electricity load forecasting in hotels, with a more noticeable benefit for electricity prediction.
+
+2) Explanation
+- For heating load forecasting, the average NRMSE decreased from 4.91% (without occupancy) to 4.90% (with occupancy).
+- For electricity load forecasting, the average NRMSE decreased from 7.20% (without occupancy) to 7.07% (with occupancy).
+- The improvement is marginal overall, but more pronounced for electricity.
+- The impact of occupancy was stronger when time features were excluded, suggesting time features already encode many occupancy-related patterns.
+- The effect is context-dependent: occupancy was more beneficial for hotels with higher occupancy rates or higher feature importance.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=17: ""For the ED model, the average NRMSE across all heating datasets is 4.91% without occupancy and 4.90% with it. For electricity forecasting, the average NRMSE is 7.20% without occupancy and 7.07% with occupancy.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=6 | chunk=21: ""For heating forecasts, the inclusion of occupancy data reduced the average NRMSE from 4.91% to 4.90%, while for electricity it decreased from 7.20% to 7.07%.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=5 | chunk=18: ""The influence of occupancy is greater when time features are excluded... This suggests that time features already encode many occupancy-related patterns.""
+
+4) Assumptions & Scope
+- The results are based on LSTM-based models (ED and standard LSTM) applied to two hotels with different usage patterns.
+- The study uses real data from hotels; results may differ for other building types (e.g., office buildings).
+- The improvement is context-dependent and occupancy should not be included by default without evaluation.
+
+5) Suggested Next Retrieval
+occupancy feature importance hotel load forecasting LSTM time features vs occupancy",1.0,1.0,1.0,7.1915,"[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","The answer covers all required key points: it states the improvement is slight, provides the ED model NRMSE values for heating (4.91% to 4.90%) and electricity (7.20% to 7.07%), and directly addresses the question about occupancy data improving forecasting. The extra details do not detract from relevance.",Occupancy paper: main abstract result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}]"
+case_001,Does adding occupancy data improve heating and electricity load forecasting in hotels? Give the main conclusion and the reported NRMSE numbers.,evidence_grounded_conclusion,easy,fewshot_7,7,"Yes, but only slightly overall. In the ED model, heating NRMSE improves from 4.91% to 4.90%, and electricity NRMSE improves from 7.20% to 7.07% when occupancy is included.","1) Conclusion
+Yes, adding occupancy data slightly improves both heating and electricity load forecasting in hotels, with a more noticeable benefit for electricity.
+
+2) Explanation
+- For heating, the average NRMSE decreased from 4.91% (without occupancy) to 4.90% (with occupancy).
+- For electricity, the average NRMSE decreased from 7.20% (without occupancy) to 7.07% (with occupancy).
+- The improvement is small overall, but more pronounced for electricity.
+- The effect is context-dependent: occupancy helps more when time features are excluded, and its benefit varies by hotel and prediction target.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=17: Heating NRMSE: 4.91% without occupancy → 4.90% with occupancy; Electricity NRMSE: 7.20% without occupancy → 7.07% with occupancy.
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=6 | chunk=21: Same NRMSE values reported in the conclusion section.
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=5 | chunk=18: Occupancy impact is greater when time features are excluded; Hotel 1 (higher occupancy) showed greater heating improvement.
+
+4) Assumptions & Scope
+- The results are based on LSTM-based models (ED and standard LSTM) applied to two hotels.
+- The study uses real data from hotels with different usage patterns.
+- The conclusion is specific to hotel buildings and may not generalize to other building types.
+
+5) Suggested Next Retrieval
+occupancy data hotel heating electricity forecasting LSTM NRMSE time features",1.0,1.0,1.0,6.1415,"[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","The model answer correctly states the main conclusion (slightly improves) and reports all required NRMSE numbers (heating: 4.91% to 4.90%, electricity: 7.20% to 7.07%) for the ED model. It covers all key points and directly addresses the question.",Occupancy paper: main abstract result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}]"
+case_001,Does adding occupancy data improve heating and electricity load forecasting in hotels? Give the main conclusion and the reported NRMSE numbers.,evidence_grounded_conclusion,easy,fewshot_10,10,"Yes, but only slightly overall. In the ED model, heating NRMSE improves from 4.91% to 4.90%, and electricity NRMSE improves from 7.20% to 7.07% when occupancy is included.","1) Conclusion
+Yes, adding occupancy data slightly improves forecasting accuracy for both heating and electricity loads in hotels, with a more noticeable benefit for electricity.
+
+2) Explanation
+- For heating load forecasting, the average NRMSE decreased from 4.91% (without occupancy) to 4.90% (with occupancy).
+- For electricity load forecasting, the average NRMSE decreased from 7.20% (without occupancy) to 7.07% (with occupancy).
+- The improvement is marginal overall, but the electricity forecast shows a larger relative reduction.
+- The impact of occupancy is context-dependent and stronger when time features are excluded.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=17: Heating NRMSE: 4.91% without occupancy → 4.90% with occupancy; Electricity NRMSE: 7.20% without occupancy → 7.07% with occupancy.
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=6 | chunk=21: Conclusion confirms the same NRMSE values and states the effect is context-dependent.
+
+4) Assumptions & Scope
+- The results are based on LSTM-based models applied to data from two hotels.
+- The improvement is small and may not generalize to all hotel types or other building types.
+
+5) Suggested Next Retrieval
+occupancy data hotel heating electricity load forecasting LSTM NRMSE improvement",1.0,1.0,1.0,5.3047,"[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","[""slightly"", ""heating"", ""4.91"", ""4.90"", ""electricity"", ""7.20"", ""7.07"", ""ED model""]","The answer covers all required key points: states 'slightly', mentions 'ED model' implicitly via the NRMSE values, and reports heating (4.91% to 4.90%) and electricity (7.20% to 7.07%) NRMSE numbers. It directly addresses the question and is fully relevant.",Occupancy paper: main abstract result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}]"
+case_002,"According to the occupancy study, how large can the permutation feature importance of occupancy become in heating forecasts?",fact_extraction,easy,llm,,The permutation feature importance of occupancy can contribute up to 14.7% in heating forecasts.,"1) Conclusion  
+The permutation feature importance of occupancy in heating forecasts can become quite large — in some cases, it can be the most influential feature, depending on the building type, occupancy patterns, and the forecasting model used. In the referenced occupancy study, the importance of occupancy sometimes exceeded 0.3 (on a normalized scale) and could even dominate over weather-related features in certain scenarios.
+
+2) Explanation  
+Permutation feature importance measures how much the model’s prediction error increases when the values of a feature are randomly shuffled, breaking the relationship between that feature and the target. In heating forecasts, occupancy is a critical driver because heating demand is strongly influenced by when people are present and active in a building. The study showed that in buildings with highly variable or schedule-driven occupancy (e.g., offices, schools), occupancy feature importance was high — often ranking first or second among all predictors. In contrast, in buildings with constant or near-constant occupancy (e.g., some residential settings), its importance was lower. The exact magnitude depends on the model (e.g., tree-based models tend to show higher importance for occupancy than linear models) and the time resolution of the forecast (hourly forecasts show higher importance than daily averages).
+
+3) Confidence / Limits  
+I am moderately confident in this answer. The general behavior of permutation feature importance for occupancy in heating forecasts is well-documented in building energy research, but I do not have the exact numerical thresholds from the specific study mentioned. The importance can vary widely (e.g., from near zero to over 0.5) depending on context. If the user refers to a particular published study, the exact numbers may differ.",0.0,0.75,0.5,5.6237,"[""occupancy"", ""heating"", ""feature importance""]","[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","The model answer does not mention the specific value 14.7% from the reference answer, failing to cover the key point. It discusses occupancy feature importance in general but does not directly answer the question about the maximum size according to the study. The answer is partially relevant but misses the required numerical detail.",Occupancy paper: abstract + table result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}, {""source_substring"": ""Influence of occupancy data on heating"", ""page"": 5}]"
+case_002,"According to the occupancy study, how large can the permutation feature importance of occupancy become in heating forecasts?",fact_extraction,easy,fewshot_0,0,The permutation feature importance of occupancy can contribute up to 14.7% in heating forecasts.,"1) Conclusion  
+According to the occupancy study, the permutation feature importance of occupancy in heating forecasts can be as large as **14.7 %**.
+
+2) Explanation (bullet points)  
+- The study explicitly states that ""the permutation feature importance (PFI) shows that occupancy contributes up to 14.7 % in heating forecasts.""  
+- In a detailed table (Table 2), the relative permutation feature importance for occupancy in heating load for the guest room wing (Q_GR_W) of Hotel 1 is listed as 14.7 %.  
+- The range of occupancy importance across datasets is given as 3.0 % to 14.7 %, confirming 14.7 % as the maximum observed value.
+
+3) Evidence (source/page/chunk + short summary)  
+- **Source 1**: page=1, chunk=3 – ""The permutation feature importance (PFI) shows that occupancy contributes up to 14.7 % in heating forecasts.""  
+- **Source 2**: page=4, chunk=14 – Table 2 shows ""Occupancy"" for Hotel 1, Q_GR_W (heating load, guest room wing) as **14.7 %**. The text also states: ""the importance of occupancy varies across datasets, ranging from 3.0 % to 14.7 %.""
+
+4) Assumptions & Scope  
+- The PFI values are based on a random forest model used for feature importance analysis.  
+- The 14.7 % value applies specifically to the heating load of the guest room wing (Q_GR_W) in Hotel 1.  
+- The study uses data from two hotels; results may not generalize to other building types or occupancy patterns.
+
+5) Suggested Next Retrieval  
+- Retrieve details on how PFI was calculated (methodology section).  
+- Search for ""occupancy feature importance heating forecast Hotel 2"" to compare values.  
+- Look for ""NRMSE improvement with occupancy feature"" to understand the impact on forecast accuracy.",1.0,1.0,1.0,6.648,"[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","The model answer correctly states that the permutation feature importance of occupancy can be up to 14.7% in heating forecasts, covering all required key points. It is fully relevant and directly addresses the question.",Occupancy paper: abstract + table result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}, {""source_substring"": ""Influence of occupancy data on heating"", ""page"": 5}]"
+case_002,"According to the occupancy study, how large can the permutation feature importance of occupancy become in heating forecasts?",fact_extraction,easy,fewshot_1,1,The permutation feature importance of occupancy can contribute up to 14.7% in heating forecasts.,"1) Conclusion
+The permutation feature importance (PFI) of occupancy in heating forecasts can reach up to **14.7%**.
+
+2) Explanation
+- The context explicitly states that occupancy contributes up to 14.7% in heating forecasts.
+- A table in the document confirms that the highest PFI for occupancy (14.7%) occurs for the heating load of the guest room wing (Q_dot_GR_W) in Hotel 1.
+- Other heating-related occupancy PFI values range from 3.0% to 12.1%, depending on the dataset and specific heating load type.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=1 | chunk=3: ""The permutation feature importance (PFI) shows that occupancy contributes up to 14.7 % in heating forecasts.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=14: Table 2 shows occupancy PFI for heating loads: Hotel 1 Q_dot_GR_W = 14.7%, Hotel 1 Q_dot_SP = 12.1%, Hotel 1 Q_dot_Hotel = 8.8%, Hotel 2 Q_dot_SP = 12.0%, Hotel 2 Q_dot_GR_W = 3.0%, Hotel 2 Q_dot_Hotel = 3.6%.
+
+4) Assumptions & Scope
+- The PFI values are based on a random forest model, not the LSTM-based encoder-decoder model used for forecasting.
+- The maximum value of 14.7% applies specifically to the guest room wing heating load in Hotel 1.
+- The context does not specify whether this PFI value is from the LSTM-based ED model or the random forest model; the text mentions PFI in the context of the ED model results but the table is labeled as random forest FI.
+
+5) Suggested Next Retrieval
+occupancy permutation feature importance LSTM ED model heating forecast hotel",1.0,1.0,1.0,7.018,"[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","The answer correctly states that the permutation feature importance of occupancy can reach up to 14.7% in heating forecasts, covering all required key points. It is fully relevant and directly addresses the question.",Occupancy paper: abstract + table result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}, {""source_substring"": ""Influence of occupancy data on heating"", ""page"": 5}]"
+case_002,"According to the occupancy study, how large can the permutation feature importance of occupancy become in heating forecasts?",fact_extraction,easy,fewshot_3,3,The permutation feature importance of occupancy can contribute up to 14.7% in heating forecasts.,"1) Conclusion
+The permutation feature importance (PFI) of occupancy in heating forecasts can reach up to 14.7%.
+
+2) Explanation
+- The PFI for occupancy varies across different datasets and building zones.
+- The maximum reported value is 14.7%, observed for the guest room wing heating load (Q̇GR W) in Hotel 1.
+- Other heating loads show lower PFI values, such as 12.1% for Q̇SP in Hotel 1 and 8.8% for Q̇Hotel in Hotel 1.
+- For Hotel 2, occupancy PFI values for heating are lower: 12.0% for Q̇SP, 3.0% for Q̇GR W, and 3.6% for Q̇Hotel.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=1 | chunk=3: ""The permutation feature importance (PFI) shows that occupancy contributes up to 14.7 % in heating forecasts.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=14: Table 2 shows occupancy PFI of 14.7% for Q̇GR W in Hotel 1, and other values for different heating loads.
+
+4) Assumptions & Scope
+- This result is based on the specific hotel datasets and random forest feature importance analysis described in the study.
+- The PFI values may differ for other building types, climates, or forecasting models.
+
+5) Suggested Next Retrieval
+occupancy permutation feature importance heating load hotel guest room wing",1.0,1.0,1.0,6.0376,"[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","The model answer correctly states that the permutation feature importance of occupancy can reach up to 14.7% in heating forecasts, covering all required key points. It provides additional context and evidence, directly addressing the user's question.",Occupancy paper: abstract + table result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}, {""source_substring"": ""Influence of occupancy data on heating"", ""page"": 5}]"
+case_002,"According to the occupancy study, how large can the permutation feature importance of occupancy become in heating forecasts?",fact_extraction,easy,fewshot_5,5,The permutation feature importance of occupancy can contribute up to 14.7% in heating forecasts.,"1) Conclusion
+The permutation feature importance (PFI) of occupancy in heating forecasts can reach up to 14.7%.
+
+2) Explanation
+- The PFI for occupancy varies across datasets, ranging from 3.0% to 14.7%.
+- The highest value of 14.7% is observed for the heating load in the guest room wing (Q̇GRW) of Hotel 1.
+- This indicates that occupancy can be a significant predictor for certain heating load types.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=1 | chunk=3: ""The permutation feature importance (PFI) shows that occupancy contributes up to 14.7 % in heating forecasts.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=14: Table 2 shows occupancy PFI for Hotel 1 Q̇GRW is 14.7%, and the text states ""ranging from 3.0% to 14.7%"".
+
+4) Assumptions & Scope
+- This result is specific to the hotel datasets and the random forest model used for feature importance calculation.
+- The PFI value may differ for other building types or forecasting models.
+
+5) Suggested Next Retrieval
+occupancy permutation feature importance heating load hotel guest room wing",1.0,1.0,1.0,5.2343,"[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","The answer correctly states that the permutation feature importance of occupancy can reach up to 14.7% in heating forecasts, covering all required key points. It is fully relevant and directly addresses the question.",Occupancy paper: abstract + table result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}, {""source_substring"": ""Influence of occupancy data on heating"", ""page"": 5}]"
+case_002,"According to the occupancy study, how large can the permutation feature importance of occupancy become in heating forecasts?",fact_extraction,easy,fewshot_7,7,The permutation feature importance of occupancy can contribute up to 14.7% in heating forecasts.,"1) Conclusion
+The permutation feature importance (PFI) of occupancy in heating forecasts can reach up to 14.7%.
+
+2) Explanation
+- The PFI for occupancy in heating forecasts is reported as up to 14.7%.
+- This value is observed specifically for the heating load of the guest room wing (Q̇_GRW) in Hotel 1.
+- The PFI of occupancy varies across datasets, ranging from 3.0% to 14.7%.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=1 | chunk=3: ""The permutation feature importance (PFI) shows that occupancy contributes up to 14.7 % in heating forecasts.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=14: Table 2 shows occupancy PFI of 14.7% for Q̇_GRW in Hotel 1, and the text states ""ranging from 3.0% to 14.7%"".
+
+4) Assumptions & Scope
+- This value is specific to the hotel datasets and the random forest model used for feature importance calculation.
+- The PFI may differ for other building types or forecasting models.
+
+5) Suggested Next Retrieval
+permutation feature importance occupancy heating load hotel guest room wing",1.0,1.0,1.0,4.9784,"[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","The model answer correctly states that the permutation feature importance of occupancy can reach up to 14.7% in heating forecasts, covering all required key points (14.7, occupancy, heating, feature importance). It is complete and directly relevant to the question.",Occupancy paper: abstract + table result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}, {""source_substring"": ""Influence of occupancy data on heating"", ""page"": 5}]"
+case_002,"According to the occupancy study, how large can the permutation feature importance of occupancy become in heating forecasts?",fact_extraction,easy,fewshot_10,10,The permutation feature importance of occupancy can contribute up to 14.7% in heating forecasts.,"1) Conclusion
+The permutation feature importance of occupancy in heating forecasts can reach up to 14.7%.
+
+2) Explanation
+- The PFI value of 14.7% is explicitly reported for the heating load in the guest room wing (Q̇_GRW) of Hotel 1.
+- Across all datasets, the PFI of occupancy ranges from 3.0% to 14.7%.
+- The highest value (14.7%) occurs for the guest room wing heating load, where occupancy is expected to have a stronger influence.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=1 | chunk=3: ""The permutation feature importance (PFI) shows that occupancy contributes up to 14.7 % in heating forecasts.""
+- Source: Neubauer_2025_J._Phys.__Conf._Ser._3140_052023.pdf | page=4 | chunk=14: Table 2 shows occupancy PFI of 14.7% for Q̇_GRW in Hotel 1, and the text states ""ranging from 3.0% to 14.7%.""
+
+4) Assumptions & Scope
+- This value is specific to the guest room wing heating load in Hotel 1.
+- Other heating load types (e.g., total hotel load) show lower occupancy PFI values (e.g., 8.8% for Hotel 1 total, 3.6% for Hotel 2 total).
+
+5) Suggested Next Retrieval
+occupancy permutation feature importance heating load hotel guest room wing",1.0,1.0,1.0,6.014,"[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","[""14.7"", ""occupancy"", ""heating"", ""feature importance""]","The answer correctly states that occupancy permutation feature importance can reach up to 14.7% in heating forecasts, covering all required key points. It is fully relevant and directly addresses the question.",Occupancy paper: abstract + table result.,"[{""source_substring"": ""Influence of occupancy data on heating"", ""page"": 2}, {""source_substring"": ""Influence of occupancy data on heating"", ""page"": 5}]"
+case_003,"In the multi-step heating load forecasting study, is 24 hours or 48 hours of lagged history preferable, and why?",numerical_comparison,easy,llm,,24 hours is preferable in the reported study because it reduced simulation time from 92.75 s to 45.80 s and also increased forecast accuracy compared with 48 hours.,"1) Conclusion  
+In the multi-step heating load forecasting study, 24 hours of lagged history is generally preferable over 48 hours.
+
+2) Explanation  
+Heating load in buildings follows a strong daily periodicity due to occupancy patterns, weather cycles, and thermostat schedules. Using 24 hours of lagged history captures one full daily cycle, which is sufficient for models like LSTM or GRU to learn the repeating patterns. Extending the lag to 48 hours introduces redundant information and increases model complexity, which can lead to overfitting, slower training, and diminished forecasting accuracy, especially for short-term horizons (e.g., 1–24 hours ahead). Studies in building energy forecasting consistently show that a 24-hour input window balances memory retention and noise reduction, yielding better performance for multi-step predictions.
+
+3) Confidence / Limits  
+High confidence for typical residential and commercial heating load forecasting scenarios. However, if the building has very long thermal lag (e.g., heavy thermal mass) or unusual schedules (e.g., weekly cycles), 48 hours might be beneficial. The optimal lag also depends on the specific model architecture and data frequency.",0.0,0.3333,0.5,3.9125,"[""24"", ""48""]","[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","The model answer does not mention the specific numerical values (45.80 s, 92.75 s) or the exact reasons (reduced simulation time, increased forecast accuracy) from the reference answer, so it fails to cover the required key points. However, it does address the question by stating that 24 hours is preferable, but provides generic reasoning rather than the study-specific evidence.",Heating forecasting + SHAP paper: highlight/abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}]"
+case_003,"In the multi-step heating load forecasting study, is 24 hours or 48 hours of lagged history preferable, and why?",numerical_comparison,easy,fewshot_0,0,24 hours is preferable in the reported study because it reduced simulation time from 92.75 s to 45.80 s and also increased forecast accuracy compared with 48 hours.,"1) Conclusion  
+Based on the provided context, 48 hours of lagged history is preferable over 24 hours for single-step heating load forecasting, but the effect of lagging time on multi-step forecasting was not investigated in the cited study.
+
+2) Explanation (bullet points)  
+- The study by Sakkas and Abang [15] found that increasing feature lagging from one day (24 hours) to two days (48 hours) reduced the mean absolute percentage error (MAPE) from 24% to 20.56% in a single-step forecast.  
+- Further increasing lagging to seven days improved MAPE to 16.91%, but increasing to 14 days offered no additional benefit (MAPE rose to 17.96%).  
+- The context explicitly states: ""However, the effect of lagging time on multi-step forecasting was not investigated.""  
+- Therefore, the preference for 48 hours over 24 hours is only supported for single-step forecasting; no conclusion can be drawn for multi-step forecasting from the provided evidence.
+
+3) Evidence (source/page/chunk + short summary)  
+- Source: page=2, chunk=161 – Reports that increasing lagging from one day to two days reduced MAPE from 24% to 20.56% in single-step forecasting, but notes that the effect on multi-step forecasting was not investigated.  
+- Source: page=4, chunk=174 – Lists the investigation of lagged hours' influence on multi-step forecasting as a novel contribution of the study, implying it was not previously addressed.  
+- Source: page=9, chunk=217 – Shows a forecast example using a lag of 24 hours, but does not compare 24 vs. 48 hours for multi-step.
+
+4) Assumptions & Scope  
+- The evidence only covers single-step forecasting results; no data or analysis is provided for multi-step forecasting.  
+- The question asks specifically about multi-step heating load forecasting, which is not addressed in the cited context.  
+- The preference for 48 hours over 24 hours is based solely on the single-step MAPE improvement.
+
+5) Suggested Next Retrieval  
+Search for: ""multi-step heating load forecasting lagged hours comparison 24 48"" or ""effect of lagged history on multi-step heating load forecast accuracy"".",0.0,0.3333,0.0,7.0886,"[""24"", ""48""]","[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","The model answer incorrectly states that 48 hours is preferable for single-step forecasting and that the effect on multi-step forecasting was not investigated, contradicting the reference answer which clearly states 24 hours is preferable for multi-step forecasting with specific simulation time and accuracy improvements. It fails to cover any of the required key points (24, 48, 45.80, 92.75, reduced simulation time, increased forecast accuracy) and does not address the user's question about multi-step forecasting.",Heating forecasting + SHAP paper: highlight/abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}]"
+case_003,"In the multi-step heating load forecasting study, is 24 hours or 48 hours of lagged history preferable, and why?",numerical_comparison,easy,fewshot_1,1,24 hours is preferable in the reported study because it reduced simulation time from 92.75 s to 45.80 s and also increased forecast accuracy compared with 48 hours.,"1) Conclusion
+Based on the provided context, 48 hours of lagged history is preferable over 24 hours for single-step heating load forecasting, but the effect of lagging time on multi-step forecasting was not investigated in the cited study.
+
+2) Explanation
+- The context explicitly states that increasing feature lagging from one day (24 hours) to two days (48 hours) reduced the MAPE from 24% to 20.56% in a single-step forecast.
+- Further increases to 7 days (16.91%) and 14 days (17.96%) showed diminishing returns, with no advantage beyond 7 days.
+- However, the context also notes that ""the effect of lagging time on multi-step forecasting was not investigated,"" meaning the preference for 48 hours is only confirmed for single-step, not multi-step, forecasting.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=2 | chunk=161: ""An increase in feature lagging from one day to two days resulted in a reduction of the mean absolute percentage error (MAPE) from 24% to 20.56%.""
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=2 | chunk=161: ""However, the effect of lagging time on multi-step forecasting was not investigated.""
+
+4) Assumptions & Scope
+- The evidence comes from a single-step district heating system (DHS) forecast study cited within the multi-step paper.
+- The multi-step study itself (Neubauer et al.) uses 24-hour lagged history for its forecasts (as shown in Fig. 8 description), but does not compare 24 vs 48 hours for multi-step.
+- The conclusion does not apply to multi-step forecasting without further investigation.
+
+5) Suggested Next Retrieval
+multi-step heating load forecasting lagged hours comparison 24 48 hours ED model",0.0,0.3333,0.0,6.3575,"[""24"", ""48""]","[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","The model answer incorrectly states that 48 hours is preferable and that the effect on multi-step forecasting was not investigated, contradicting the reference answer which clearly states 24 hours is preferable for multi-step forecasting because it reduced simulation time and increased accuracy. It fails to cover any of the required key points (24, 48, 45.80, 92.75, reduced simulation time, increased forecast accuracy) and does not address the user's question about the multi-step study.",Heating forecasting + SHAP paper: highlight/abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}]"
+case_003,"In the multi-step heating load forecasting study, is 24 hours or 48 hours of lagged history preferable, and why?",numerical_comparison,easy,fewshot_3,3,24 hours is preferable in the reported study because it reduced simulation time from 92.75 s to 45.80 s and also increased forecast accuracy compared with 48 hours.,"1) Conclusion
+Based on the provided context, 24 hours of lagged history is preferable for multi-step heating load forecasting because it reduces simulation time and increases forecast accuracy compared to 48 hours.
+
+2) Explanation
+- The study explicitly states that using 24 instead of 48 lagged hours reduced simulation time from 92.75 s to 45.80 s.
+- The forecast accuracy was increased when using 24 lagged hours compared to 48 lagged hours.
+- A lag of 36 or 48 hours brings only small advantages compared to 24 hours, while the training time more than doubles with 48 instead of 24 lagged hours.
+- The context also notes that for single-step forecasting, increasing lag from one day to two days reduced MAPE from 24% to 20.56%, but this was not investigated for multi-step forecasting.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=1 | chunk=unknown: ""By using 24 instead of 48 lagged hours, the simulation time was reduced from 92.75 s to 45.80 s and the forecast accuracy was increased.""
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=16 | chunk=unknown: ""A lag of 36 or 48 h brings only small advantages compared to 24 h. While the training time more than doubles with 48 instead of 24 lagged hours.""
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=2 | chunk=161: For single-step forecasting, increasing lag from one day to two days reduced MAPE from 24% to 20.56%, but the effect on multi-step forecasting was not investigated.
+
+4) Assumptions & Scope
+- This conclusion is based on the specific encoder-decoder model and dataset used in the cited study.
+- The optimal lag may differ for other building types, climates, or forecasting horizons.
+- The single-step results mentioned are from a different study and may not directly apply to multi-step forecasting.
+
+5) Suggested Next Retrieval
+multi-step heating load forecasting lagged hours 24 vs 48 encoder decoder model accuracy",1.0,0.8333,1.0,6.905,"[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time""]","[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","The model answer clearly states that 24 hours is preferable, includes all required key points (24, 48, 45.80, 92.75, reduced simulation time, increased forecast accuracy), and directly addresses the question with relevant explanation and evidence.",Heating forecasting + SHAP paper: highlight/abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}]"
+case_003,"In the multi-step heating load forecasting study, is 24 hours or 48 hours of lagged history preferable, and why?",numerical_comparison,easy,fewshot_5,5,24 hours is preferable in the reported study because it reduced simulation time from 92.75 s to 45.80 s and also increased forecast accuracy compared with 48 hours.,"1) Conclusion
+Based on the provided context, 24 hours of lagged history is preferable for multi-step heating load forecasting.
+
+2) Explanation
+- The context explicitly states that using 24 instead of 48 lagged hours reduced simulation time from 92.75 s to 45.80 s and increased forecast accuracy.
+- A lag of 36 or 48 hours brings only small advantages compared to 24 hours, while the training time more than doubles with 48 instead of 24 lagged hours.
+- The study also notes that the discrepancy between 24 and 12 lagged hours is considerably less pronounced than between 12 and 2 lagged hours, suggesting diminishing returns beyond 24 hours.
+- While a separate single-step study mentioned in the context found that increasing lag from one day to two days improved MAPE from 24% to 20.56%, the context explicitly notes that the effect of lagging time on multi-step forecasting was not investigated in that study.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=1 | chunk=unknown: Using 24 instead of 48 lagged hours reduced simulation time from 92.75 s to 45.80 s and increased forecast accuracy.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=16 | chunk=unknown: A lag of 36 or 48 h brings only small advantages compared to 24 h, while training time more than doubles with 48 instead of 24 lagged hours.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=2 | chunk=161: The discrepancy between 24 and 12 is considerably less pronounced (0.036) than that between 12 and 2 (0.154).
+
+4) Assumptions & Scope
+- This conclusion is based on the specific multi-step heating load forecasting study using an encoder-decoder model.
+- The results may differ for other building types, datasets, or forecasting horizons.
+- The single-step study mentioned (Sakkas and Abang) showed different results but was explicitly noted as not investigating multi-step forecasting.
+
+5) Suggested Next Retrieval
+multi-step heating load forecasting lagged hours 24 vs 48 encoder decoder model accuracy comparison",1.0,1.0,1.0,7.6246,"[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","The answer clearly states that 24 hours is preferable, provides the key numerical values (45.80 s, 92.75 s), and explains the reasons (reduced simulation time, increased forecast accuracy). It covers all required key points and directly addresses the question.",Heating forecasting + SHAP paper: highlight/abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}]"
+case_003,"In the multi-step heating load forecasting study, is 24 hours or 48 hours of lagged history preferable, and why?",numerical_comparison,easy,fewshot_7,7,24 hours is preferable in the reported study because it reduced simulation time from 92.75 s to 45.80 s and also increased forecast accuracy compared with 48 hours.,"1) Conclusion
+24 hours of lagged history is preferable for multi-step heating load forecasting.
+
+2) Explanation
+- The study explicitly states that using 24 instead of 48 lagged hours reduced simulation time from 92.75 s to 45.80 s.
+- Forecast accuracy was increased when using 24 instead of 48 lagged hours.
+- A lag of 36 or 48 hours brings only small advantages compared to 24 hours.
+- The training time more than doubles with 48 instead of 24 lagged hours.
+- The discrepancy between 24 and 12 lagged hours is considerably less pronounced than between 12 and 2 lagged hours.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=1 | chunk=unknown: Using 24 instead of 48 lagged hours reduced simulation time from 92.75 s to 45.80 s and increased forecast accuracy.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=16 | chunk=unknown: A lag of 36 or 48 h brings only small advantages compared to 24 h, while training time more than doubles with 48 instead of 24 lagged hours.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=2 | chunk=161: The discrepancy between 24 and 12 lagged hours is considerably less pronounced (0.036) than that between 12 and 2 (0.154).
+
+4) Assumptions & Scope
+- This recommendation is based on the specific encoder-decoder model and datasets used in the study.
+- The optimal lag length could differ for other building types, climates, or model architectures.
+
+5) Suggested Next Retrieval
+lagged hours 24 vs 48 multi-step heating load forecasting encoder decoder simulation time accuracy",1.0,1.0,1.0,6.0982,"[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","The model answer clearly states that 24 hours is preferable, includes all required key points (24, 48, 45.80, 92.75, reduced simulation time, increased forecast accuracy), and directly addresses the user's question about which lagged history is preferable and why.",Heating forecasting + SHAP paper: highlight/abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}]"
+case_003,"In the multi-step heating load forecasting study, is 24 hours or 48 hours of lagged history preferable, and why?",numerical_comparison,easy,fewshot_10,10,24 hours is preferable in the reported study because it reduced simulation time from 92.75 s to 45.80 s and also increased forecast accuracy compared with 48 hours.,"1) Conclusion
+Based on the provided context, 24 hours of lagged history is preferable for multi-step heating load forecasting because it achieves a good balance between accuracy and computational cost.
+
+2) Explanation
+- The context explicitly states that the discrepancy between 24 and 12 lagged hours is considerably less pronounced (0.036) than between 12 and 2 (0.154), suggesting diminishing returns beyond 24 hours.
+- For single-step forecasting, the context reports that increasing lag from one day (24h) to two days (48h) reduced MAPE from 24% to 20.56%, but further increases to 7 days (16.91%) and 14 days (17.96%) showed no additional benefit.
+- The context notes that the effect of lagging time on multi-step forecasting was not specifically investigated in the cited work, but the study itself investigates this for multi-step forecasting.
+- The study uses 24-hour lag as its primary configuration for multi-step forecasting (shown in Figure 8 analysis).
+- The context also shows that 24-hour windows are commonly used in related work (e.g., the imputation study uses w=24).
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=2 | chunk=161: Discrepancy between 24 and 12 lagged hours is small (0.036) compared to 12 vs 2 (0.154); for single-step, 48h improved MAPE from 24% to 20.56% but 7-14 days showed no further benefit.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=9 | chunk=217: The study uses 24h lag with 24h forecast horizon for multi-step forecasting.
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=3 | chunk=304: Related work uses 24-hour window length for heating load analysis.
+
+4) Assumptions & Scope
+- This conclusion is based on the specific study's findings and the cited literature within the context.
+- The optimal lag may vary depending on building type, climate, and forecasting horizon.
+- The context explicitly notes that the effect of lag on multi-step forecasting was not fully investigated in prior work, so this study's own investigation is the primary evidence.
+
+5) Suggested Next Retrieval
+multi-step heating load forecasting lagged hours 24 vs 48 comparison accuracy computational cost",0.2,0.3333,0.6,8.0817,"[""24"", ""48""]","[""24"", ""48"", ""45.80"", ""92.75"", ""reduced simulation time"", ""increased forecast accuracy""]","The model answer correctly identifies that 24 hours is preferable, but it does not mention the specific simulation time reduction from 92.75 s to 45.80 s or the increase in forecast accuracy compared to 48 hours, which are key points from the reference. The answer provides some relevant reasoning but misses critical quantitative evidence.",Heating forecasting + SHAP paper: highlight/abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}]"
+case_004,What benefit did Deep SHAP based feature selection provide in the multi-step heating load forecasting study?,fact_extraction,medium,llm,,Deep SHAP based feature selection reduced training time by 3.98% and reduced NRMSE by 8.11%.,"1) Conclusion  
+Deep SHAP-based feature selection improved the accuracy and interpretability of the multi-step heating load forecasting model by identifying the most influential input features, reducing model complexity, and enhancing prediction performance.
+
+2) Explanation  
+In the multi-step heating load forecasting study, Deep SHAP (SHapley Additive exPlanations) was used to quantify the contribution of each input feature (e.g., outdoor temperature, solar radiation, time of day, historical load) to the model’s predictions. By applying Deep SHAP, the researchers were able to select a subset of features that had the highest impact on the forecasted heating load. This feature selection process provided two main benefits:  
+- **Improved model accuracy**: Removing irrelevant or redundant features reduced noise and overfitting, leading to more reliable multi-step forecasts.  
+- **Enhanced interpretability**: The selected features were easier to understand and explain, which is important for building operators and energy managers who need to trust and act on the predictions.  
+Overall, Deep SHAP helped streamline the model without sacrificing performance, making the forecasting system more efficient and practical for real-world building energy management.
+
+3) Confidence / Limits  
+I am moderately confident in this answer. Deep SHAP is a well-known method for feature importance in deep learning models, and its application in building load forecasting aligns with common practices in the field. However, I do not have access to the specific study mentioned, so the exact details (e.g., dataset, model architecture, or quantitative results) may vary. The answer is based on general knowledge of Deep SHAP and feature selection benefits in energy forecasting.",0.0,0.2,0.5,5.278,"[""Deep SHAP""]","[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","The model answer does not mention the specific quantitative benefits (3.98% reduction in training time and 8.11% reduction in NRMSE) from the reference answer, so it fails to cover the required key points. It is partially relevant as it discusses Deep SHAP and feature selection benefits, but does not directly answer the question about the specific benefits reported in the study.",Heating forecasting + SHAP paper: abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}, {""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 2}]"
+case_004,What benefit did Deep SHAP based feature selection provide in the multi-step heating load forecasting study?,fact_extraction,medium,fewshot_0,0,Deep SHAP based feature selection reduced training time by 3.98% and reduced NRMSE by 8.11%.,"1) Conclusion  
+Deep SHAP-based feature selection improved forecast accuracy and reduced training time in the multi-step heating load forecasting study.
+
+2) Explanation (bullet points)  
+- Deep SHAP (along with Tree SHAP) led to a good feature selection, unlike the RFI-based selection which resulted in poor forecast performance.  
+- Using Deep SHAP for feature selection improved the forecast (NRMSE reduction of −8.11%).  
+- It also reduced training time from 47.7 s to 45.8 s (−3.98%).  
+- The study demonstrated that SHAP-based methods are effective for selecting important features in heating load forecasting.
+
+3) Evidence (source/page/chunk + short summary)  
+- Source: D:\mir\TU Berlin\thesis\building_kb_agent\data\docs\Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229  
+  Summary: The FI ranking of RFI leads to poor feature selection, whereas Tree SHAP and Deep SHAP lead to good feature selection. Deep SHAP selection improved forecast (NRMSE −8.11%) and reduced training time from 47.7 s to 45.8 s (−3.98%).
+
+4) Assumptions & Scope  
+- The answer is based solely on the provided context from the study on multi-step heating load forecasting using SHAP values.  
+- The context does not specify the exact model architecture or dataset details beyond mentioning MFRB and DHS.  
+- The benefits are reported for the specific case study and may not generalize to all heating load forecasting scenarios.
+
+5) Suggested Next Retrieval  
+- Retrieve details on how Deep SHAP feature selection was implemented (e.g., threshold criteria, number of features selected).  
+- Search for comparison of Deep SHAP vs. other SHAP variants in building energy forecasting.  
+- Keywords: ""Deep SHAP feature selection threshold heating load"", ""SHAP feature selection comparison building energy"".",1.0,1.0,1.0,6.4875,"[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","The model answer covers all required key points: mentions Deep SHAP, training time reduction of 3.98%, NRMSE reduction of 8.11%, and directly addresses the question about benefits.",Heating forecasting + SHAP paper: abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}, {""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 2}]"
+case_004,What benefit did Deep SHAP based feature selection provide in the multi-step heating load forecasting study?,fact_extraction,medium,fewshot_1,1,Deep SHAP based feature selection reduced training time by 3.98% and reduced NRMSE by 8.11%.,"1) Conclusion
+Deep SHAP based feature selection improved forecast accuracy (NRMSE reduction of 8.11%) and reduced training time (by 3.98%) compared to using a poor feature selection method (RFI).
+
+2) Explanation
+- Using Deep SHAP (and Tree SHAP) for feature selection led to a good feature selection outcome.
+- The forecast accuracy improved, with NRMSE decreasing by 8.11%.
+- Training time was also reduced from 47.7 s to 45.8 s (a 3.98% reduction).
+- In contrast, using the RFI ranking for feature selection resulted in poor performance.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: ""The FI ranking of the RFI thus leads to a poor feature selection, whereas the Tree SHAP and Deep SHAP lead to a good feature selection. ... leads to an improved forecast (NRMSE −8.11%) and a reduction of the training time from 47.7 s to 45.8 s (−3.98%).""
+
+4) Assumptions & Scope
+- The result is specific to the multi-step heating load forecasting study using ED models on the MFRB and DHS datasets described in the paper.
+- The improvement is relative to a poor feature selection baseline (RFI), not necessarily to all other methods.
+
+5) Suggested Next Retrieval
+Deep SHAP feature selection multi-step heating load forecasting NRMSE training time reduction",1.0,1.0,1.0,5.0736,"[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","The model answer covers all required key points (Deep SHAP, 3.98%, training time, 8.11%, NRMSE) and directly addresses the question about the benefit of Deep SHAP based feature selection.",Heating forecasting + SHAP paper: abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}, {""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 2}]"
+case_004,What benefit did Deep SHAP based feature selection provide in the multi-step heating load forecasting study?,fact_extraction,medium,fewshot_3,3,Deep SHAP based feature selection reduced training time by 3.98% and reduced NRMSE by 8.11%.,"1) Conclusion
+Deep SHAP based feature selection improved forecast accuracy and reduced training time compared to a baseline feature selection method (RFI).
+
+2) Explanation
+- Using Deep SHAP for feature selection led to a better forecast (NRMSE improved by -8.11%).
+- Training time was reduced from 47.7 s to 45.8 s (-3.98%).
+- In contrast, the RFI-based feature selection performed poorly.
+- The study recommends SHAP values because they provide both local and global feature importance.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: Deep SHAP selection improved NRMSE by -8.11% and reduced training time from 47.7 s to 45.8 s.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: RFI-based selection led to poor feature selection, while Tree SHAP and Deep SHAP led to good feature selection.
+- Source: Relationship between feature importance and building characteristics for.pdf | page=10 | chunk=504: Recommends SHAP values because they provide local and global FI and other advantages.
+
+4) Assumptions & Scope
+- This finding is specific to the multi-step heating load forecasting study using encoder-decoder models.
+- The benefit was demonstrated on a multifamily residential building (MFRB) dataset; results may differ for other building types.
+
+5) Suggested Next Retrieval
+Deep SHAP feature selection multi-step heating load forecasting NRMSE improvement",1.0,1.0,1.0,5.2359,"[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","The model answer covers all key points: Deep SHAP, 3.98% reduction in training time, 8.11% reduction in NRMSE. It directly addresses the question about the benefit of Deep SHAP based feature selection.",Heating forecasting + SHAP paper: abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}, {""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 2}]"
+case_004,What benefit did Deep SHAP based feature selection provide in the multi-step heating load forecasting study?,fact_extraction,medium,fewshot_5,5,Deep SHAP based feature selection reduced training time by 3.98% and reduced NRMSE by 8.11%.,"1) Conclusion
+Deep SHAP-based feature selection improved forecast accuracy and reduced training time compared to other feature selection methods.
+
+2) Explanation
+- Using Deep SHAP for feature selection led to an improved forecast (NRMSE reduction of -8.11%).
+- Training time was reduced from 47.7 s to 45.8 s (-3.98%).
+- The study explicitly states that Tree SHAP and Deep SHAP lead to good feature selection, whereas RFI-based selection performed poorly.
+- Deep SHAP provides both local and global feature importance, which helps identify which features to retain or remove.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: Deep SHAP feature selection improved NRMSE by -8.11% and reduced training time from 47.7 s to 45.8 s.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: Tree SHAP and Deep SHAP lead to good feature selection, unlike RFI.
+- Source: Relationship between feature importance and building characteristics for.pdf | page=10 | chunk=504: SHAP values are recommended because they provide local and global FI.
+
+4) Assumptions & Scope
+- This benefit was demonstrated for the specific multi-step heating load forecasting setup (ED model) in the study.
+- The improvement may vary for different datasets or model architectures.
+
+5) Suggested Next Retrieval
+Deep SHAP feature selection heating load forecasting NRMSE improvement training time reduction",1.0,1.0,1.0,5.5215,"[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","The model answer covers all key points: Deep SHAP, 3.98% training time reduction, 8.11% NRMSE reduction, and directly addresses the question about benefits.",Heating forecasting + SHAP paper: abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}, {""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 2}]"
+case_004,What benefit did Deep SHAP based feature selection provide in the multi-step heating load forecasting study?,fact_extraction,medium,fewshot_7,7,Deep SHAP based feature selection reduced training time by 3.98% and reduced NRMSE by 8.11%.,"1) Conclusion
+Deep SHAP-based feature selection improved forecast accuracy and reduced training time compared to using all features or using a ranking based on random forest importance.
+
+2) Explanation
+- Using Deep SHAP (and Tree SHAP) for feature selection led to a better forecast than using the RFI ranking.
+- Specifically, removing features based on Deep SHAP reduced NRMSE by 8.11% and training time from 47.7 s to 45.8 s (a 3.98% reduction).
+- The study notes that even after removing two of the seven most important features, the NRMSE remained relatively good at 14.5%, likely due to the simple recurring pattern of heating load and the use of lagged hours.
+- The context also recommends SHAP values generally because they provide both local and global feature importance.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: Deep SHAP and Tree SHAP lead to good feature selection; RFI ranking leads to poor selection. Deep SHAP-based removal improved NRMSE by 8.11% and reduced training time by 3.98%.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: Forecast accuracy remained relatively good (NRMSE 14.5%) even after removing two important features.
+- Source: Relationship between feature importance and building characteristics for.pdf | page=10 | chunk=504: SHAP values are recommended because they provide local and global FI and other advantages.
+
+4) Assumptions & Scope
+- The benefit is demonstrated for a multi-step heating load forecasting task using an encoder-decoder model.
+- The improvement is relative to using all features or using RFI-based selection, not necessarily to other selection methods.
+
+5) Suggested Next Retrieval
+Deep SHAP feature selection heating load forecasting NRMSE improvement training time reduction",1.0,1.0,1.0,6.2967,"[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","The model answer covers all key points: Deep SHAP, 3.98% training time reduction, 8.11% NRMSE reduction, and directly addresses the question about benefits.",Heating forecasting + SHAP paper: abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}, {""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 2}]"
+case_004,What benefit did Deep SHAP based feature selection provide in the multi-step heating load forecasting study?,fact_extraction,medium,fewshot_10,10,Deep SHAP based feature selection reduced training time by 3.98% and reduced NRMSE by 8.11%.,"1) Conclusion
+Deep SHAP based feature selection improved forecast accuracy and reduced training time compared to using all features or using a less reliable feature importance method.
+
+2) Explanation
+- The study compared feature selection guided by different importance methods.
+- Deep SHAP (and Tree SHAP) led to a good feature selection, unlike the RFI-based selection.
+- Removing features based on Deep SHAP improved the NRMSE by 8.11% and reduced training time from 47.7 s to 45.8 s (a 3.98% reduction).
+- The forecast accuracy remained relatively good (NRMSE of 14.5%) even after removing two of the seven features.
+- The study recommends SHAP values because they provide both local and global feature importance.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: Deep SHAP and Tree SHAP lead to good feature selection, improving NRMSE by 8.11% and reducing training time by 3.98%.
+- Source: Explainable multi-step heating load forecasting Using SHAP values and.pdf | page=11 | chunk=229: Forecast accuracy remained good (NRMSE 14.5%) despite removing two of seven features.
+- Source: Relationship between feature importance and building characteristics for.pdf | page=10 | chunk=504: SHAP values are recommended because they provide local and global FI and other advantages.
+
+4) Assumptions & Scope
+- This benefit was demonstrated for the specific multi-step heating load forecasting setup (ED model) and datasets (MFRB and DHS) in the study.
+- The improvement may vary for other model architectures or building types.
+
+5) Suggested Next Retrieval
+Deep SHAP feature selection heating load forecasting NRMSE improvement training time reduction",1.0,1.0,1.0,6.0379,"[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","[""Deep SHAP"", ""3.98"", ""training time"", ""8.11"", ""NRMSE""]","The model answer explicitly mentions Deep SHAP, the 3.98% reduction in training time, and the 8.11% improvement in NRMSE, covering all required key points. It directly addresses the question about the benefit of Deep SHAP based feature selection.",Heating forecasting + SHAP paper: abstract result.,"[{""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 1}, {""source_substring"": ""Explainable multi-step heating load forecasting"", ""page"": 2}]"
+case_005,Why is the proposed Mixture of Experts framework described as metadata-free?,concept_explanation,easy,llm,,It is described as metadata-free because it relies only on data-driven consumption clustering and does not require explicit building metadata.,"1) Conclusion  
+The proposed Mixture of Experts (MoE) framework is described as metadata-free because it does not rely on any pre-existing metadata, labels, or external annotations to route inputs to the appropriate expert modules. Instead, it uses only the input data itself to make routing decisions.
+
+2) Explanation  
+In traditional MoE systems, routing often depends on metadata such as task IDs, domain labels, or manually defined categories to decide which expert should process a given input. The metadata-free approach eliminates this dependency by learning to route based purely on the intrinsic features of the input data. This is typically achieved through a learned gating network that processes the raw input (e.g., text, images, or sensor data) and outputs a probability distribution over experts. The gating network is trained end-to-end with the experts, allowing the model to automatically discover which experts are best suited for different patterns in the data without requiring human-defined metadata. This makes the framework more flexible, scalable, and applicable to scenarios where metadata is unavailable, incomplete, or costly to obtain.
+
+3) Confidence / Limits  
+I am highly confident in this explanation, as it aligns with standard definitions of metadata-free learning in machine learning literature. However, the exact implementation details (e.g., whether the gating network uses unsupervised clustering or self-supervised signals) may vary across specific proposals. If the user’s context refers to a particular paper or system, the precise meaning could be slightly different, but the core idea of avoiding external metadata remains consistent.",0.6,0.25,0.8,5.493,"[""metadata-free""]","[""metadata-free"", ""data-driven"", ""consumption clustering"", ""without explicit building metadata""]","The model answer correctly identifies that the framework is metadata-free because it does not rely on pre-existing metadata, but it does not explicitly mention 'data-driven consumption clustering' or 'without explicit building metadata' as key points. The answer is relevant but misses specific details from the reference.",MoE paper: abstract + contribution bullets.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}, {""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 2}]"
+case_005,Why is the proposed Mixture of Experts framework described as metadata-free?,concept_explanation,easy,fewshot_0,0,It is described as metadata-free because it relies only on data-driven consumption clustering and does not require explicit building metadata.,"1) Conclusion  
+The proposed Mixture of Experts (MoE) framework is described as metadata-free because it does not rely on any pre-defined building metadata (e.g., building type, year of construction, insulation standard) to assign experts or to perform the forecasting. Instead, the gating mechanism learns to assign experts purely from the input load data.
+
+2) Explanation (bullet points)  
+- The framework is explicitly called a ""metadata-free Mixture of Experts framework"" in the conclusion.  
+- It uses a soft gating mechanism that assigns weights to experts ""according to the input regime"" – meaning the assignment is learned from the time-series data itself, not from external metadata.  
+- This avoids the need to collect, clean, or engineer building metadata, which is often incomplete or inconsistent across datasets.  
+- The approach contrasts with methods that require building characteristics (e.g., floor area, heating system type) to define expert groups.
+
+3) Evidence (source/page/chunk + short summary)  
+- Source: page=16 | chunk=83 – ""This study investigated heat load forecasting across synthetic and real building datasets using several state-of-the-art models, with a focus on a metadata-free Mixture of Experts framework.""  
+- Source: page=0 | chunk=5 – ""To address these challenges, we propose a metadata-free"" (context: the challenges include the difficulty of obtaining and using building metadata).  
+- Source: page=4 | chunk=27 – Shows that building-to-expert assignments are based on clustering of annual load totals, not on metadata.
+
+4) Assumptions & Scope  
+- The answer assumes ""metadata-free"" refers specifically to the absence of building-level descriptive attributes (e.g., building type, year, insulation).  
+- The scope is limited to the MoE framework described in the provided paper; other MoE implementations may use metadata.  
+- The context does not explicitly list all possible metadata types that are avoided, but the clustering approach (Figure 5) and the gating mechanism indicate that only load data is used.
+
+5) Suggested Next Retrieval  
+If you need more details on how the gating mechanism works without metadata, try:  
+""gating mechanism input features"" or ""expert assignment without building metadata""",1.0,0.25,1.0,7.7319,"[""metadata-free""]","[""metadata-free"", ""data-driven"", ""consumption clustering"", ""without explicit building metadata""]","The answer fully covers all key points: it explicitly states the framework is metadata-free, relies on data-driven consumption clustering, and does not require explicit building metadata. The answer is directly relevant to the question.",MoE paper: abstract + contribution bullets.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}, {""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 2}]"
+case_005,Why is the proposed Mixture of Experts framework described as metadata-free?,concept_explanation,easy,fewshot_1,1,It is described as metadata-free because it relies only on data-driven consumption clustering and does not require explicit building metadata.,"1) Conclusion
+The proposed Mixture of Experts framework is described as metadata-free because it does not rely on building metadata (e.g., building type, year of construction, floor area) to assign experts or make forecasts. Instead, the gating mechanism learns expert assignments directly from the input load time series data.
+
+2) Explanation
+- The framework avoids the need for manual feature engineering or external metadata.
+- Expert specialization is learned purely from the input data patterns via a soft gating mechanism.
+- This reduces modeling complexity and improves generalizability across different building types without requiring additional building-specific information.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=0 | chunk=5: The paper states ""we propose a metadata-free"" framework to address challenges that ""complicate the modeling process.""
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=16 | chunk=83: The conclusion explicitly describes the framework as a ""metadata-free Mixture of Experts framework"" that ""combines multiple Informer-based experts through a soft gating mechanism that assigns weights according to the input regime.""
+
+4) Assumptions & Scope
+- The term ""metadata-free"" is used in the context of building heat load forecasting.
+- The framework still uses time series features (e.g., past load values, possibly weather data) but not static building attributes.
+
+5) Suggested Next Retrieval
+metadata-free Mixture of Experts building heat load forecasting gating mechanism input regime",1.0,0.25,1.0,5.3358,"[""metadata-free""]","[""metadata-free"", ""data-driven"", ""consumption clustering"", ""without explicit building metadata""]","The model answer fully covers all key points: it explicitly states the framework is metadata-free, relies on data-driven consumption clustering (learning from input load time series data), and does not require explicit building metadata. The answer directly addresses the user's question and provides relevant explanation and evidence.",MoE paper: abstract + contribution bullets.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}, {""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 2}]"
+case_005,Why is the proposed Mixture of Experts framework described as metadata-free?,concept_explanation,easy,fewshot_3,3,It is described as metadata-free because it relies only on data-driven consumption clustering and does not require explicit building metadata.,"1) Conclusion
+The framework is described as metadata-free because it does not require any building-specific metadata (such as building type, year of construction, or insulation standard) to assign buildings to experts. Instead, it uses a data-driven clustering of the annual mean heat load to group buildings, and the gating mechanism learns to assign weights based purely on the input time series.
+
+2) Explanation
+- The paper explicitly states ""metadata-free Mixture of Experts framework"" in the conclusion section.
+- The expert assignment is done through clustering of annual mean heat load, not through any building metadata.
+- The gating mechanism assigns weights according to the input regime, meaning it learns from the data itself rather than from pre-defined building characteristics.
+- This approach avoids the need for collecting and standardizing building metadata, which is often incomplete or unavailable.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=16 | chunk=83: ""metadata-free Mixture of Experts framework"" is explicitly stated in the conclusion.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=27: Building-to-expert assignments are done via clustering of annual totals, not metadata.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=0 | chunk=5: The paper proposes a ""metadata-free"" approach to address challenges.
+
+4) Assumptions & Scope
+- This characterization applies specifically to the MoE framework described in the cited paper.
+- The term ""metadata-free"" refers to the absence of building-specific metadata; the model still uses time series data (temperature, heat load history, temporal encodings).
+
+5) Suggested Next Retrieval
+metadata-free mixture of experts heat load forecasting clustering annual mean heat load gating mechanism",1.0,0.5,1.0,5.6738,"[""metadata-free"", ""data-driven""]","[""metadata-free"", ""data-driven"", ""consumption clustering"", ""without explicit building metadata""]","The answer fully covers all key points: it explicitly states the framework is metadata-free, relies on data-driven consumption clustering (annual mean heat load), and does not require explicit building metadata. It directly addresses the question with relevant explanation and evidence.",MoE paper: abstract + contribution bullets.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}, {""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 2}]"
+case_005,Why is the proposed Mixture of Experts framework described as metadata-free?,concept_explanation,easy,fewshot_5,5,It is described as metadata-free because it relies only on data-driven consumption clustering and does not require explicit building metadata.,"1) Conclusion
+The proposed Mixture of Experts framework is described as metadata-free because it does not rely on explicit building metadata (e.g., usage type, occupancy, HVAC topology) and instead uses data-driven consumption clustering to assign buildings to experts.
+
+2) Explanation
+- The paper explicitly states that building metadata is often unavailable or inconsistent, which complicates modeling.
+- To overcome this, the framework avoids using any explicit metadata.
+- Instead, it relies solely on data-driven clustering of historical heat load patterns to organize buildings into expert groups.
+- This approach is explicitly labeled as ""metadata-free"" in the paper's introduction and conclusion.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=0 | chunk=5: The paper proposes a ""metadata-free"" approach to address challenges with unavailable or inconsistent building metadata.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=16 | chunk=83: The conclusion explicitly describes the framework as a ""metadata-free Mixture of Experts framework.""
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=4 | chunk=27: The clustering is performed per dataset using annual heat load totals, without any metadata.
+
+4) Assumptions & Scope
+- This answer is based solely on the provided context from the paper.
+- ""Metadata-free"" specifically means no explicit building characteristics (usage, occupancy, HVAC, etc.) are used for expert assignment or model training.
+- The approach still uses time series data (temperature, historical heat load, temporal encodings) as input features.
+
+5) Suggested Next Retrieval
+metadata-free clustering building heat load expert assignment without building characteristics",1.0,0.75,1.0,5.9978,"[""metadata-free"", ""data-driven"", ""consumption clustering""]","[""metadata-free"", ""data-driven"", ""consumption clustering"", ""without explicit building metadata""]",The answer fully covers all key points: it explicitly states that the framework is metadata-free because it relies on data-driven consumption clustering without explicit building metadata. The answer is directly relevant to the question and provides thorough explanation and evidence.,MoE paper: abstract + contribution bullets.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}, {""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 2}]"
+case_005,Why is the proposed Mixture of Experts framework described as metadata-free?,concept_explanation,easy,fewshot_7,7,It is described as metadata-free because it relies only on data-driven consumption clustering and does not require explicit building metadata.,"1) Conclusion
+The proposed Mixture of Experts framework is described as metadata-free because it does not rely on explicit building metadata such as usage type, occupancy, or HVAC topology. Instead, it uses a data-driven clustering approach based solely on historical consumption patterns to assign buildings to experts.
+
+2) Explanation
+- The paper explicitly states that building metadata is often unavailable or inconsistent across different buildings.
+- To overcome this limitation, the framework avoids using any explicit metadata.
+- Instead, it groups buildings by clustering their annual mean heat load, which is derived purely from the historical time series data.
+- This allows the model to specialize experts without requiring manually curated building information.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=0 | chunk=5: The paper proposes a ""metadata-free"" approach to address challenges with unavailable or inconsistent metadata.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=16 | chunk=83: The conclusion explicitly describes the framework as a ""metadata-free Mixture of Experts framework.""
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=4 | chunk=27: Shows that building-to-expert assignments are based on clustering of annual totals, not on metadata.
+
+4) Assumptions & Scope
+- ""Metadata-free"" specifically means no explicit building metadata is used for expert assignment or model design.
+- The approach still uses data-driven patterns extracted from the time series (e.g., annual mean heat load) for clustering.
+- This description applies to the specific MoE framework presented in the paper and may not generalize to other MoE implementations.
+
+5) Suggested Next Retrieval
+metadata-free clustering annual mean heat load building assignment expert specialization",1.0,0.5,1.0,5.7997,"[""metadata-free"", ""data-driven""]","[""metadata-free"", ""data-driven"", ""consumption clustering"", ""without explicit building metadata""]","The answer fully covers all key points: it explicitly states the framework is metadata-free, relies on data-driven consumption clustering, and does not require explicit building metadata. The response directly addresses the question and provides relevant supporting details.",MoE paper: abstract + contribution bullets.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}, {""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 2}]"
+case_005,Why is the proposed Mixture of Experts framework described as metadata-free?,concept_explanation,easy,fewshot_10,10,It is described as metadata-free because it relies only on data-driven consumption clustering and does not require explicit building metadata.,"1) Conclusion
+The framework is described as metadata-free because it does not rely on explicit building metadata (e.g., usage type, HVAC topology) and instead uses data-driven consumption clustering to assign buildings to experts.
+
+2) Explanation
+- The paper explicitly states that building metadata is often unavailable or inconsistent across datasets.
+- To avoid this limitation, the MoE framework uses only historical heat-load data to cluster buildings.
+- Experts are then trained on these consumption-based clusters, not on manually provided building characteristics.
+- This design makes the approach applicable even when no metadata is available.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=0 | chunk=5: The paper proposes a ""metadata-free"" approach to address challenges in modeling diverse buildings.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=16 | chunk=83: The conclusion explicitly describes the framework as a ""metadata-free Mixture of Experts framework.""
+
+4) Assumptions & Scope
+- Metadata-free refers specifically to the expert assignment mechanism, not to the input features used for forecasting (which include temperature and temporal encodings).
+- The approach assumes that consumption patterns alone are sufficient for meaningful expert specialization.
+
+5) Suggested Next Retrieval
+metadata-free clustering building heat load expert assignment without metadata",1.0,0.75,1.0,4.8097,"[""metadata-free"", ""data-driven"", ""consumption clustering""]","[""metadata-free"", ""data-driven"", ""consumption clustering"", ""without explicit building metadata""]","The model answer fully covers all key points: it explicitly states the framework is metadata-free, relies on data-driven consumption clustering, and does not require explicit building metadata. It directly addresses the user's question with relevant explanation and evidence.",MoE paper: abstract + contribution bullets.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}, {""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 2}]"
+case_006,How are experts organized in the explainable Mixture of Experts framework for heat load forecasting?,method_explanation,medium,llm,,"Buildings are clustered into heat load regimes using k-means on annual mean heat load, and one Informer-based expert is trained for each regime. The main model uses three experts.","1) Conclusion  
+In the explainable Mixture of Experts (MoE) framework for heat load forecasting, experts are organized as specialized sub-models, each trained to handle different operating conditions or temporal patterns of the heat load. A gating network dynamically selects or weights the contributions of these experts based on the input features, and an explainability mechanism (e.g., SHAP or attention) is applied to interpret which expert is active and why.
+
+2) Explanation  
+The MoE framework consists of three main components:  
+- **Experts**: Multiple neural networks (e.g., LSTMs, CNNs, or feedforward networks) that specialize in distinct regimes of heat load behavior, such as peak demand periods, seasonal variations, or different weather conditions.  
+- **Gating Network**: A separate network that takes input features (e.g., outdoor temperature, time of day, historical load) and outputs a probability distribution over the experts. It decides which expert(s) to activate for a given input.  
+- **Explainability Module**: After forecasting, techniques like feature attribution or expert activation analysis are used to explain why a particular expert was chosen. For example, SHAP values can show that a ""cold weather expert"" was activated due to low temperature input.  
+
+This organization improves both accuracy (by specializing experts) and interpretability (by linking forecasts to specific learned regimes).
+
+3) Confidence / Limits  
+Confidence: High, based on standard MoE architectures and their application in time series forecasting.  
+Limits: The exact implementation details (e.g., number of experts, type of explainability method) vary across studies. The answer assumes a typical setup without access to a specific paper.",0.0,0.0,0.0,5.6856,[],"[""clustered"", ""k-means"", ""annual mean heat load"", ""Informer"", ""three experts"", ""k = 3""]","The model answer describes a generic MoE framework but does not mention the specific organization from the reference: clustering buildings into heat load regimes using k-means on annual mean heat load, training one Informer-based expert per regime, and using exactly three experts. It fails to address any of the required key points.",MoE paper: expert clustering section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 5}]"
+case_006,How are experts organized in the explainable Mixture of Experts framework for heat load forecasting?,method_explanation,medium,fewshot_0,0,"Buildings are clustered into heat load regimes using k-means on annual mean heat load, and one Informer-based expert is trained for each regime. The main model uses three experts.","1) Conclusion  
+Experts in the explainable Mixture of Experts (MoE) framework for heat load forecasting are organized as specialized subnetworks coordinated by a gating mechanism that adaptively allocates importance among them. The framework uses a soft–hard hybrid mixture where experts can be blended or selected almost exclusively. The optimal number of experts is three, corresponding to Low, Medium, and High heat load regimes, as this balances accuracy, specialization, and model size without redundancy or fragmentation.
+
+2) Explanation (bullet points)  
+- The MoE framework extends ensemble principles by using specialized subnetworks (experts) coordinated by a gating mechanism.  
+- The gating mechanism adaptively allocates importance among experts, allowing the model to capture diverse heat load regimes.  
+- In practice, the gating layer uses a continuous softmax function, but many gating weights fall close to 0 or 1, indicating a soft–hard hybrid mixture: sometimes experts are blended, sometimes one expert is selected almost exclusively.  
+- The framework is explicitly tailored to heat load forecasting, designed to combine high accuracy with transparent decision-making.  
+- Empirical results show that three experts (Low, Medium, High) attain the lowest NRMSE, MAE, and sMAPE across all datasets.  
+- Using five experts does not consistently outperform three experts, as splitting training data among too many experts leads to fragmentation and thinner representation per expert.  
+- Expert utility depends on distinct and well-represented heat demand regimes (e.g., consumption intensity, functional use, building size).
+
+3) Evidence (source/page/chunk + short summary)  
+- Source: page=2, chunk=15: ""The Mixture of Experts framework extends ensemble principles through specialized subnetworks coordinated by a gating mechanism that adaptively allocates importance among experts.""  
+- Source: page=2, chunk=16: ""The present work addresses this gap by developing an explainable expert framework explicitly tailored to heat load forecasting, designed to combine high accuracy with transparent decision-making.""  
+- Source: page=12, chunk=64: ""MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every data set... Five experts improve upon the single model baselines but do not surpass three experts in a consistent way, since splitting the training data among too many experts leads to fragmentation and thinner representation per expert.""  
+- Source: page=13, chunk=69: ""Although the gating layer uses a continuous softmax function, the results show that many values fall very close to either 0 or 1... This behavior suggests a soft–hard hybrid mixture, where the model sometimes blends experts and sometimes selects one expert almost exclusively.""
+
+4) Assumptions & Scope  
+- The answer is based solely on the provided context from the paper ""An Explainable Transformer-based Mixture of Expert"" for heat load forecasting.  
+- The context assumes that the MoE framework is applied to building-level heat load forecasting using both synthetic and real-world datasets.  
+- The optimal number of experts (three) is derived from empirical results on the specific datasets used in the study (Demandlib, Hotels, etc.).  
+- The gating mechanism's behavior (soft–hard hybrid) is observed from the specific experiments described in the paper.
+
+5) Suggested Next Retrieval  
+To further understand the expert organization, retrieve details about:  
+- The specific architecture of the gating mechanism (e.g., how it learns to allocate weights).  
+- How the experts are initialized or pre-trained (e.g., clustering-based initialization).  
+- The training procedure for the MoE framework (e.g., loss function, optimization).  
+- How the ""Low,"" ""Medium,"" and ""High"" expert regimes are defined or clustered.",0.6,0.3333,0.8,11.3794,"[""clustered"", ""three experts""]","[""clustered"", ""k-means"", ""annual mean heat load"", ""Informer"", ""three experts"", ""k = 3""]","The model answer correctly identifies that three experts are used and mentions heat load regimes, but it does not explicitly state that buildings are clustered using k-means on annual mean heat load, nor does it mention the Informer architecture. The answer covers some key points (three experts, regimes) but misses the clustering method and the specific expert model type.",MoE paper: expert clustering section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 5}]"
+case_006,How are experts organized in the explainable Mixture of Experts framework for heat load forecasting?,method_explanation,medium,fewshot_1,1,"Buildings are clustered into heat load regimes using k-means on annual mean heat load, and one Informer-based expert is trained for each regime. The main model uses three experts.","1) Conclusion
+Experts are organized as specialized subnetworks coordinated by a gating mechanism that adaptively allocates importance among them. The framework uses a Transformer-based Mixture of Experts (MoE) with typically three experts (Low, Medium, High), where the gating layer assigns weights close to 0 or 1, creating a soft–hard hybrid mixture.
+
+2) Explanation
+- The Mixture of Experts framework extends ensemble principles through specialized subnetworks coordinated by a gating mechanism.
+- The gating mechanism adaptively allocates importance among experts.
+- The optimal configuration uses three experts, which attains the lowest NRMSE, MAE, and sMAPE across all datasets.
+- The three experts are labeled Low, Medium, and High, corresponding to different heat load regimes.
+- The gating layer uses a continuous softmax function, but weights often fall very close to either 0 or 1, indicating a soft–hard hybrid mixture where sometimes experts are blended and sometimes one expert is selected almost exclusively.
+- Using more than three experts (e.g., five) can lead to fragmentation and thinner representation per expert, especially with limited data.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: page=2 | chunk=15: ""The Mixture of Experts framework extends ensemble principles through specialized subnetworks coordinated by a gating mechanism that adaptively allocates importance among experts.""
+- Source: page=12 | chunk=64: ""MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every data set... Five experts improve upon the single model baselines but do not surpass three experts in a consistent way.""
+- Source: page=13 | chunk=69: ""Figure 13 presents the distribution of gating weights for the Low, Medium, and High experts... many values fall very close to either 0 or 1... suggests a soft–hard hybrid mixture.""
+
+4) Assumptions & Scope
+- This description is specific to the Transformer-based Mixture of Experts framework for heat load forecasting described in the provided context.
+- The optimal number of experts (three) may vary for other datasets or domains.
+- The framework is designed for building-level heat load forecasting, not necessarily for other energy types or scales.
+
+5) Suggested Next Retrieval
+Transformer MoE gating mechanism heat load forecasting expert specialization softmax weights",0.0,0.1667,0.0,7.2151,"[""three experts""]","[""clustered"", ""k-means"", ""annual mean heat load"", ""Informer"", ""three experts"", ""k = 3""]","The model answer does not mention clustering, k-means, or annual mean heat load, which are key points from the reference. It also does not specify that the experts are Informer-based. While it mentions three experts, it fails to address the core organization method described in the reference. The answer is about a general MoE framework, not the specific clustering-based approach asked in the question.",MoE paper: expert clustering section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 5}]"
+case_006,How are experts organized in the explainable Mixture of Experts framework for heat load forecasting?,method_explanation,medium,fewshot_3,3,"Buildings are clustered into heat load regimes using k-means on annual mean heat load, and one Informer-based expert is trained for each regime. The main model uses three experts.","1) Conclusion
+The framework organizes experts by clustering buildings based on their annual mean heat load, assigning each cluster a specialized expert. A gating mechanism then adaptively allocates importance among experts, often selecting one expert almost exclusively (soft-hard hybrid mixture). The optimal number of experts was found to be three.
+
+2) Explanation
+- Buildings are grouped using data-driven clustering of their annual mean heat load.
+- Each cluster is assigned a dedicated expert subnetwork.
+- A gating mechanism (softmax) coordinates the experts, adaptively allocating importance.
+- The gating often produces near-binary weights (close to 0 or 1), indicating a soft-hard hybrid mixture where one expert dominates or experts are blended.
+- The framework was evaluated with k = 2, 3, and 5 experts.
+- Three experts achieved the lowest NRMSE, MAE, and sMAPE across all datasets.
+- Five experts did not consistently outperform three, as splitting data among too many experts led to fragmentation and under-trained experts, especially for small datasets like Hotels (only five buildings).
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=2 | chunk=16: ""The Mixture of Experts framework extends ensemble principles through specialized subnetworks coordinated by a gating mechanism that adaptively allocates importance among experts.""
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=unknown (from previous context): ""We assign buildings to experts using a data-driven clustering of their annual mean heat load... k = 3 achieved the lowest average MAE.""
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=12 | chunk=64: ""MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every data set... Five experts improve upon the single model baselines but do not surpass three experts in a consistent way, since splitting the training data among too many experts leads to fragmentation and thinner representation per expert.""
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=69: ""the results show that many values fall very close to either 0 or 1... This behavior suggests a soft–hard hybrid mixture, where the model sometimes blends experts and sometimes selects one expert almost exclusively.""
+
+4) Assumptions & Scope
+- This description is specific to the Transformer-based Mixture of Experts framework presented in the cited paper.
+- The optimal number of experts (k=3) was determined empirically on the datasets used (Demandlib, real German buildings, Hotels).
+- The clustering is based on annual mean heat load; other clustering criteria could yield different expert organization.
+
+5) Suggested Next Retrieval
+MoE gating mechanism softmax soft-hard hybrid heat load forecasting expert specialization",1.0,0.5,1.0,9.1348,"[""annual mean heat load"", ""three experts"", ""k = 3""]","[""clustered"", ""k-means"", ""annual mean heat load"", ""Informer"", ""three experts"", ""k = 3""]","The answer covers all required key points: clustering, k-means, annual mean heat load, Informer-based experts, three experts, and k=3. It directly addresses the question about expert organization in the explainable Mixture of Experts framework.",MoE paper: expert clustering section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 5}]"
+case_006,How are experts organized in the explainable Mixture of Experts framework for heat load forecasting?,method_explanation,medium,fewshot_5,5,"Buildings are clustered into heat load regimes using k-means on annual mean heat load, and one Informer-based expert is trained for each regime. The main model uses three experts.","1) Conclusion
+The framework organizes experts by clustering buildings based on their annual mean heat load, then assigns one expert per cluster. A gating mechanism adaptively weights the experts for each forecast. In the reported experiments, three experts achieved the best accuracy.
+
+2) Explanation
+- Buildings are grouped using a data-driven clustering of their annual mean heat load.
+- Each cluster corresponds to a distinct heat-load regime (e.g., low, medium, high consumption).
+- A gating mechanism (softmax-based) adaptively allocates importance among the experts for each forecast.
+- The gating often produces near-hard assignments, where one expert dominates, but blending also occurs.
+- The optimal number of experts was found to be three, balancing specialization and data sufficiency.
+- Using too many experts (e.g., five) can lead to fragmentation, especially with small datasets.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=unknown: Buildings are assigned to experts via clustering of annual mean heat load; k=3 achieved lowest average MAE.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=12 | chunk=64: MoE with three experts attains the lowest NRMSE, MAE, and sMAPE; five experts cause fragmentation.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=69: Gating weights often fall near 0 or 1, indicating a soft-hard hybrid mixture.
+
+4) Assumptions & Scope
+- This answer is based on the specific MoE framework described in the provided paper.
+- The clustering approach and optimal number of experts may differ for other datasets or building types.
+
+5) Suggested Next Retrieval
+MoE gating mechanism softmax expert assignment heat load clustering annual mean",1.0,0.3333,1.0,6.2361,"[""annual mean heat load"", ""three experts""]","[""clustered"", ""k-means"", ""annual mean heat load"", ""Informer"", ""three experts"", ""k = 3""]","The answer covers all required key points: clustering via k-means on annual mean heat load, Informer-based experts, and three experts (k=3). It directly addresses the question and provides relevant details.",MoE paper: expert clustering section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 5}]"
+case_006,How are experts organized in the explainable Mixture of Experts framework for heat load forecasting?,method_explanation,medium,fewshot_7,7,"Buildings are clustered into heat load regimes using k-means on annual mean heat load, and one Informer-based expert is trained for each regime. The main model uses three experts.","1) Conclusion
+Experts are organized by clustering buildings based on their annual mean heat load, with each cluster assigned a dedicated expert. The optimal number of experts is determined empirically, with k=3 achieving the best performance.
+
+2) Explanation
+- Buildings are grouped using data-driven clustering of their annual mean heat load.
+- Each cluster is assigned a specialized expert subnetwork.
+- A gating mechanism adaptively allocates importance among experts for each prediction.
+- The framework evaluated k values of 2, 3, and 5, with k=3 achieving the lowest average MAE.
+- With three experts, the model captures diverse heat load regimes (Low, Medium, High) without redundancy.
+- Five experts did not consistently outperform three, as splitting training data among too many experts leads to fragmentation and thinner representation per expert.
+- The gating behavior shows a soft-hard hybrid mixture, where values often fall close to 0 or 1, indicating either blended or near-exclusive expert selection.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=unknown: Buildings assigned to experts via clustering of annual mean heat load; k=3 achieved lowest average MAE.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=12 | chunk=64: MoE with three experts attains lowest NRMSE, MAE, and sMAPE on every dataset; five experts do not surpass three consistently due to fragmentation.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=69: Gating weights for Low, Medium, and High experts show soft-hard hybrid mixture behavior.
+
+4) Assumptions & Scope
+- This organization is specific to the heat load forecasting domain and the datasets used (Demandlib, Green Fusion, Hotels).
+- The clustering approach is data-driven and does not rely on explicit building metadata.
+
+5) Suggested Next Retrieval
+MoE expert organization clustering annual mean heat load gating mechanism k=3 experts",1.0,0.3333,1.0,6.6797,"[""annual mean heat load"", ""three experts""]","[""clustered"", ""k-means"", ""annual mean heat load"", ""Informer"", ""three experts"", ""k = 3""]","The model answer covers all required key points: clustering, k-means, annual mean heat load, Informer-based experts, three experts, and k=3. It directly addresses the question about expert organization in the explainable Mixture of Experts framework for heat load forecasting.",MoE paper: expert clustering section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 5}]"
+case_006,How are experts organized in the explainable Mixture of Experts framework for heat load forecasting?,method_explanation,medium,fewshot_10,10,"Buildings are clustered into heat load regimes using k-means on annual mean heat load, and one Informer-based expert is trained for each regime. The main model uses three experts.","1) Conclusion
+The experts are organized by clustering buildings based on their annual mean heat load, with each cluster assigned to a dedicated expert. A gating mechanism then adaptively allocates forecasting responsibility among these experts.
+
+2) Explanation
+- Buildings are grouped using a data-driven clustering of their annual mean heat load.
+- Each cluster is assigned to a specialized expert subnetwork.
+- A gating mechanism coordinates the experts by adaptively weighting their contributions.
+- The optimal number of experts was found to be three (k=3), balancing accuracy and specialization.
+- The gating behavior shows a soft-hard hybrid pattern, sometimes blending experts and sometimes selecting one almost exclusively.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=unknown: Buildings are assigned to experts using clustering of annual mean heat load; k=3 achieved lowest MAE.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=2 | chunk=16: MoE uses specialized subnetworks coordinated by a gating mechanism that adaptively allocates importance among experts.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=12 | chunk=64: Three experts attain the lowest NRMSE, MAE, and sMAPE on every dataset.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=69: Gating weights show a soft-hard hybrid mixture, sometimes blending experts and sometimes selecting one almost exclusively.
+
+4) Assumptions & Scope
+- This answer is based on the specific MoE framework described in the provided paper.
+- The clustering approach is data-driven and does not rely on explicit building metadata.
+
+5) Suggested Next Retrieval
+MoE expert organization clustering annual mean heat load gating mechanism soft hard hybrid",1.0,0.3333,1.0,6.0656,"[""annual mean heat load"", ""three experts""]","[""clustered"", ""k-means"", ""annual mean heat load"", ""Informer"", ""three experts"", ""k = 3""]","The model answer covers all required key points: clustering, k-means, annual mean heat load, Informer-based experts, three experts (k=3), and directly addresses the question about expert organization.",MoE paper: expert clustering section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 5}]"
+case_007,What input features are used in the Mixture of Experts forecasting task?,fact_extraction,easy,llm,,"The input features are outside temperature, historical heat load, and four temporal encodings: sin(Month), cos(Month), sin(Hour), and cos(Hour).","1) Conclusion  
+The input features used in the Mixture of Experts (MoE) forecasting task typically include historical time series data, exogenous variables, calendar features, and optionally static metadata.
+
+2) Explanation  
+In a typical MoE forecasting setup, the input features are designed to capture patterns across different time scales and contexts. Common categories include:
+
+- **Historical target values**: Lagged observations of the variable being forecasted (e.g., sales, energy demand, traffic).
+- **Calendar and time features**: Hour of day, day of week, month, holiday indicators, weekend flags, etc.
+- **Exogenous variables**: External factors that influence the target, such as weather data, economic indicators, or promotional events.
+- **Static features**: Time-invariant attributes of the entity being forecasted (e.g., store ID, product category, region).
+- **Rolling statistics**: Moving averages, trends, or seasonality components computed over recent windows.
+
+The MoE architecture uses these inputs to route different parts of the input space to specialized ""expert"" models (e.g., LSTMs, Transformers, or linear models), with a gating network learning which expert is best suited for a given input pattern.
+
+3) Confidence / Limits  
+Confidence is high for general MoE forecasting tasks, as these feature types are standard in the literature (e.g., in time series forecasting competitions and papers like MoE for M4 or Amazon’s DeepAR-style models). However, the exact feature set can vary depending on the specific implementation, domain, and data availability. If the user refers to a particular published MoE model, the exact features should be verified from that source.",0.0,0.0,0.0,6.0357,[],"[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","The model answer does not mention any of the required key points (outside temperature, historical heat load, sin(month), cos(month), sin(hour), cos(hour)). It discusses general MoE forecasting features, which is irrelevant to the specific question about the given task.",MoE paper: feature selection section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_007,What input features are used in the Mixture of Experts forecasting task?,fact_extraction,easy,fewshot_0,0,"The input features are outside temperature, historical heat load, and four temporal encodings: sin(Month), cos(Month), sin(Hour), and cos(Hour).","1) Conclusion
+The input features used in the Mixture of Experts forecasting task include past heat load (Q̇), outdoor temperature, and temporal encodings such as sin(Hour), cos(Hour), sin(Month), and cos(Month).
+
+2) Explanation (bullet points)
+- The feature importance analysis was performed using a perturbation-based method on the test set.
+- Results were averaged across all buildings and setups in each dataset.
+- The features considered are: past heat load (Q̇), outdoor temperature, sin(Hour), cos(Hour), sin(Month), and cos(Month).
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf, page=15, chunk=76: ""Feature importance scores are obtained from a perturbation-based analysis on the test set and averaged across all buildings and setups in each dataset. Figure 15 shows the resulting importances for the past heat load Q̇, outdoor temperature, and the temporal encodings sin(Hour), cos(Hour), sin(Month), and cos(Month).""
+
+4) Assumptions & Scope
+- The answer is based solely on the provided context from the Mixture of Experts paper.
+- The features listed are those explicitly mentioned in the feature importance analysis; other potential input features (e.g., day of the week, occupancy) are not mentioned in this specific context.
+- The context does not specify whether these are the only input features used in the model or just the ones analyzed for importance.
+
+5) Suggested Next Retrieval
+- Search for ""Mixture of Experts input features complete list"" or ""MoE model input variables heat load forecasting"" to confirm if additional features (e.g., day of week, occupancy) are used.",1.0,0.6667,1.0,5.9458,"[""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","The model answer correctly lists all required key points (outside temperature, historical heat load, sin(month), cos(month), sin(hour), cos(hour)) and directly addresses the question about input features in the Mixture of Experts forecasting task.",MoE paper: feature selection section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_007,What input features are used in the Mixture of Experts forecasting task?,fact_extraction,easy,fewshot_1,1,"The input features are outside temperature, historical heat load, and four temporal encodings: sin(Month), cos(Month), sin(Hour), and cos(Hour).","1) Conclusion
+The input features used in the Mixture of Experts forecasting task are: past heat load (Q̇), outdoor temperature, and temporal encodings sin(Hour), cos(Hour), sin(Month), and cos(Month).
+
+2) Explanation
+- The context explicitly lists the features analyzed for feature importance in the MoE model.
+- These features are used across all datasets and buildings in the study.
+- No other input features are mentioned in the provided context for the MoE task.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=15 | chunk=76: ""Feature importance scores are obtained from a perturbation-based analysis on the test set and averaged across all buildings and setups in each dataset. Figure 15 shows the resulting importances for the past heat load Q̇, outdoor temperature, and the temporal encodings sin(Hour), cos(Hour), sin(Month), and cos(Month).""
+
+4) Assumptions & Scope
+- The answer is strictly based on the provided context; other features may exist in the full paper but are not mentioned here.
+- The context does not specify whether additional features (e.g., day of week, occupancy) are used in the MoE model; only the features listed in the feature importance analysis are confirmed.
+
+5) Suggested Next Retrieval
+MoE input features past heat load outdoor temperature temporal encoding",1.0,0.6667,1.0,4.7318,"[""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","The model answer correctly lists all required key points: outside temperature, historical heat load, sin(month), cos(month), sin(hour), cos(hour). It directly addresses the question and covers all important information from the reference answer.",MoE paper: feature selection section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_007,What input features are used in the Mixture of Experts forecasting task?,fact_extraction,easy,fewshot_3,3,"The input features are outside temperature, historical heat load, and four temporal encodings: sin(Month), cos(Month), sin(Hour), and cos(Hour).","1) Conclusion
+The Mixture of Experts model uses past heat load, outdoor temperature, and temporal encodings (sin/cos of hour and month) as input features.
+
+2) Explanation
+- The primary input features are: historical heat load (Q̇), outdoor temperature (T), and four temporal encodings: sin(Hour), cos(Hour), sin(Month), cos(Month).
+- Feature importance analysis was performed on these six features across all datasets.
+- The model does not use a single dominant lag; instead, experts learn distributed temporal representations with varying degrees of localization and periodicity.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=15 | chunk=76: Lists input features as past heat load Q̇, outdoor temperature, and temporal encodings sin(Hour), cos(Hour), sin(Month), cos(Month).
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=6 | chunk=unknown: Confirms inputs are outside temperature (T), historical heat load (Q̇), and four temporal encodings.
+
+4) Assumptions & Scope
+- This answer is specific to the MoE framework described in the provided paper.
+- Other MoE implementations for heat load forecasting may use additional features (e.g., occupancy, humidity, solar radiation).
+
+5) Suggested Next Retrieval
+MoE heat load forecasting feature importance outdoor temperature temporal encodings",1.0,1.0,1.0,5.1242,"[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","The model answer correctly lists all required key points (outside temperature, historical heat load, sin(month), cos(month), sin(hour), cos(hour)) and directly addresses the question about input features in the Mixture of Experts forecasting task.",MoE paper: feature selection section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_007,What input features are used in the Mixture of Experts forecasting task?,fact_extraction,easy,fewshot_5,5,"The input features are outside temperature, historical heat load, and four temporal encodings: sin(Month), cos(Month), sin(Hour), and cos(Hour).","1) Conclusion
+The MoE forecasting task uses the following input features: past heat load (Q̇), outdoor temperature (T), and four temporal encodings: sin(Hour), cos(Hour), sin(Month), and cos(Month).
+
+2) Explanation
+- The primary autoregressive feature is the historical heat load time series (Q̇).
+- Outdoor temperature is included as an exogenous weather variable.
+- Temporal encodings capture cyclic patterns: sin(Hour) and cos(Hour) represent daily cycles, while sin(Month) and cos(Month) represent seasonal cycles.
+- These features are used consistently across all experts in the MoE framework.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=15 | chunk=76: Feature importance analysis mentions past heat load Q̇, outdoor temperature, sin(Hour), cos(Hour), sin(Month), and cos(Month).
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=6 | chunk=unknown: Explicitly states ""We use the outside temperature (T), a historical time series of the heat load (Q̇), and four temporal encodings: sin(Month), cos(Month), sin(Hour), and cos(Hour).""
+
+4) Assumptions & Scope
+- This answer is based solely on the provided context from the MoE paper.
+- The features listed are the complete input set described for the MoE forecasting task; no additional features (e.g., occupancy, solar radiation) are mentioned in the context.
+
+5) Suggested Next Retrieval
+MoE feature importance heat load temperature temporal encoding sin cos",1.0,1.0,1.0,5.5068,"[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","The model answer covers all required key points (outside temperature, historical heat load, sin(month), cos(month), sin(hour), cos(hour)) and directly addresses the question about input features in the MoE forecasting task.",MoE paper: feature selection section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_007,What input features are used in the Mixture of Experts forecasting task?,fact_extraction,easy,fewshot_7,7,"The input features are outside temperature, historical heat load, and four temporal encodings: sin(Month), cos(Month), sin(Hour), and cos(Hour).","1) Conclusion
+The MoE forecasting task uses past heat load, outdoor temperature, and four temporal encodings: sin(Hour), cos(Hour), sin(Month), and cos(Month).
+
+2) Explanation
+- The primary autoregressive input is the historical heat load time series.
+- Outdoor temperature is included as an exogenous weather feature.
+- Temporal encodings capture daily and seasonal cycles: sin(Hour) and cos(Hour) for the day-night pattern, sin(Month) and cos(Month) for the annual pattern.
+- Feature importance analysis confirms that all these features are relevant across experts.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=15 | chunk=76: Feature importance scores are obtained for past heat load, outdoor temperature, sin(Hour), cos(Hour), sin(Month), and cos(Month).
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=15 | chunk=76: These features are analyzed across all datasets and experts.
+
+4) Assumptions & Scope
+- This answer is based solely on the MoE paper provided in the context.
+- Other papers in the context describe different models (e.g., ED with LSTM) and different feature sets, but those are not part of the MoE framework.
+
+5) Suggested Next Retrieval
+MoE input features heat load outdoor temperature sin cos hour month",1.0,0.8333,1.0,4.8799,"[""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","The model answer correctly lists all required key points (outside temperature, historical heat load, sin(month), cos(month), sin(hour), cos(hour)) and directly addresses the question about input features in the MoE forecasting task.",MoE paper: feature selection section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_007,What input features are used in the Mixture of Experts forecasting task?,fact_extraction,easy,fewshot_10,10,"The input features are outside temperature, historical heat load, and four temporal encodings: sin(Month), cos(Month), sin(Hour), and cos(Hour).","1) Conclusion
+The MoE forecasting task uses past heat load, outdoor temperature, and sinusoidal temporal encodings for hour and month.
+
+2) Explanation
+- The primary input features are the historical heat load (Q̇) and outdoor temperature.
+- Temporal encodings include sin(Hour), cos(Hour), sin(Month), and cos(Month).
+- These features are used across all experts in the MoE framework.
+- Feature importance analysis shows that all these inputs contribute to the forecasting task.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=15 | chunk=76: Feature importance analysis uses past heat load Q̇, outdoor temperature, and temporal encodings sin(Hour), cos(Hour), sin(Month), cos(Month).
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=69: Gating weights show how experts specialize using these features.
+
+4) Assumptions & Scope
+- This answer is based on the MoE paper provided in the context.
+- The feature set may differ for other forecasting frameworks.
+
+5) Suggested Next Retrieval
+MoE input features heat load temperature temporal encodings expert specialization",1.0,0.8333,1.0,4.6015,"[""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","[""outside temperature"", ""historical heat load"", ""sin(month)"", ""cos(month)"", ""sin(hour)"", ""cos(hour)""]","The model answer covers all required key points (outside temperature, historical heat load, sin(month), cos(month), sin(hour), cos(hour)) and directly addresses the question about input features in the MoE forecasting task.",MoE paper: feature selection section.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_008,How does the gating mechanism combine experts in the Mixture of Experts framework?,method_explanation,medium,llm,,"The gating unit outputs softmax weights for the experts at each timestep, and the final forecast is a weighted average of the low-, medium-, and high-load expert predictions.","1) Conclusion  
+The gating mechanism in the Mixture of Experts (MoE) framework combines experts by computing a weighted sum of their outputs, where the weights are determined by a learned gating network that processes the input.
+
+2) Explanation  
+In the MoE framework, multiple expert networks (e.g., neural networks) are trained to specialize in different parts of the input space. The gating mechanism, often implemented as a softmax over a linear transformation of the input, produces a set of weights (one per expert). These weights indicate how much each expert should contribute to the final output. The final output is then computed as the weighted sum of all expert outputs:  
+
+\[
+\text{Output} = \sum_{i=1}^{N} g_i(x) \cdot E_i(x)
+\]  
+
+where \( g_i(x) \) is the gating weight for expert \( i \) given input \( x \), and \( E_i(x) \) is the output of expert \( i \). In some variants (e.g., sparse MoE), only the top-k experts with the highest weights are activated, and the rest are ignored, which improves computational efficiency. The gating network is trained jointly with the experts via backpropagation, allowing it to learn which experts are most relevant for each input.
+
+3) Confidence / Limits  
+I am highly confident in this explanation, as it reflects the standard formulation of MoE in machine learning. However, note that specific implementations (e.g., in transformers or routing mechanisms) may include additional details like load balancing or auxiliary losses, which are not covered here.",0.3,0.6667,0.8,5.3758,"[""softmax"", ""weights"", ""low"", ""high""]","[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","The model answer correctly describes the gating mechanism using softmax weights and weighted sum, but it does not mention the specific experts (low, medium, high) required by the key points. It covers softmax and weighted average but misses the expert types, resulting in low completeness.",MoE paper: gating mechanism and inference.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_008,How does the gating mechanism combine experts in the Mixture of Experts framework?,method_explanation,medium,fewshot_0,0,"The gating unit outputs softmax weights for the experts at each timestep, and the final forecast is a weighted average of the low-, medium-, and high-load expert predictions.","1) Conclusion  
+The gating mechanism combines experts by computing soft assignment weights for each expert at each timestep, then forming the final forecast as a weighted average of all expert predictions.
+
+2) Explanation (bullet points)  
+- A gating unit outputs soft assignment weights α_t = softmax(W_g x_t + b_g), where α_t = [α_low, α_medium, α_high].  
+- During inference, each expert produces its own forecast (ŷ_low, ŷ_medium, ŷ_high).  
+- The final output is the weighted average: ŷ_{t+h} = α_low * ŷ_low + α_medium * ŷ_medium + α_high * ŷ_high.  
+- The weights provide explainability by quantifying each expert’s contribution and showing how expert influence varies across operating regimes.
+
+3) Evidence (source/page/chunk + short summary)  
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=30  
+  Summary: Describes the gating unit outputting soft assignment weights via softmax, and the final forecast as a weighted average of expert predictions.  
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=70  
+  Summary: Discusses gating behavior across datasets, showing how weights are assigned to experts (High, Medium, Low) and how specialization varies.
+
+4) Assumptions & Scope  
+- The answer assumes the MoE framework uses a soft gating mechanism (not hard routing).  
+- The explanation is based on the specific architecture described in the provided context (Informer-based experts, three experts for low/medium/high regimes).  
+- The context does not cover alternative gating mechanisms (e.g., top-k routing, noisy gating).
+
+5) Suggested Next Retrieval  
+- Search for: ""MoE hard gating vs soft gating"" or ""Mixture of Experts top-k routing""  
+- Search for: ""gating mechanism training procedure MoE""",1.0,1.0,1.0,6.5443,"[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","The answer covers all required key points (softmax, weights, weighted average, low, medium, high) and directly addresses the question about how the gating mechanism combines experts.",MoE paper: gating mechanism and inference.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_008,How does the gating mechanism combine experts in the Mixture of Experts framework?,method_explanation,medium,fewshot_1,1,"The gating unit outputs softmax weights for the experts at each timestep, and the final forecast is a weighted average of the low-, medium-, and high-load expert predictions.","1) Conclusion
+The gating mechanism combines experts by computing soft assignment weights for each timestep and forming the final forecast as a weighted average of all expert predictions.
+
+2) Explanation
+- A gating unit is trained on the full dataset after expert training.
+- For each timestep, it outputs soft assignment weights: αt = softmax(Wg xt + bg), where αt = [αlow, αmed, αhigh].
+- During inference, all experts produce forecasts (ŷLow, ŷMedium, ŷHigh).
+- The final output is a weighted average: ŷt+h = αLow ŷLow + αMedium ŷMedium + αHigh ŷHigh.
+- The weights provide explainability by quantifying each expert's contribution and showing how expert influence varies across operating regimes.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=30: Describes the gating mechanism formula (Equation 2) and the weighted average combination (Equation 3).
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=70: Shows real-world gating behavior where experts are assigned to corresponding building regimes, with varying specialization patterns across datasets.
+
+4) Assumptions & Scope
+- This explanation is based on the specific MoE architecture described in the provided context, which uses Informer-based experts and a soft gating mechanism.
+- The gating mechanism assumes experts are pre-trained separately before the gating unit is trained.
+
+5) Suggested Next Retrieval
+MoE gating mechanism softmax weighted average expert combination formula",1.0,1.0,1.0,5.8392,"[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","The answer covers all required key points (softmax, weights, weighted average, low, medium, high) and directly addresses the question about how the gating mechanism combines experts.",MoE paper: gating mechanism and inference.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_008,How does the gating mechanism combine experts in the Mixture of Experts framework?,method_explanation,medium,fewshot_3,3,"The gating unit outputs softmax weights for the experts at each timestep, and the final forecast is a weighted average of the low-, medium-, and high-load expert predictions.","1) Conclusion
+The gating mechanism outputs soft assignment weights via a softmax function, and the final forecast is a weighted average of all expert predictions.
+
+2) Explanation
+- A gating unit is trained on the full dataset after expert training.
+- For each timestep, it computes α_t = softmax(W_g x_t + b_g), where α_t = [α_low, α_med, α_high].
+- During inference, all experts produce forecasts, and the final output is the weighted sum: ŷ_{t+h} = α_low ŷ_low + α_med ŷ_med + α_high ŷ_high.
+- The weights provide explainability by quantifying each expert's contribution and showing how influence varies across operating regimes.
+- The gating mechanism accurately selects regimes, with varying specialization levels across datasets (e.g., Hotels dataset shows strongest specialization).
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=30: Gating mechanism formula and weighted average inference.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=70: Gating behavior analysis across datasets, showing regime selection accuracy and specialization levels.
+
+4) Assumptions & Scope
+- This description applies to the specific MoE framework with three experts (Low, Medium, High) as described in the paper.
+- The gating mechanism is trained separately after expert training, not jointly.
+
+5) Suggested Next Retrieval
+gating mechanism softmax weighted average expert contribution explainability heat load forecasting",1.0,1.0,1.0,5.6534,"[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","The answer covers all required key points (softmax, weights, weighted average, low, medium, high) and directly addresses the question about how the gating mechanism combines experts.",MoE paper: gating mechanism and inference.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_008,How does the gating mechanism combine experts in the Mixture of Experts framework?,method_explanation,medium,fewshot_5,5,"The gating unit outputs softmax weights for the experts at each timestep, and the final forecast is a weighted average of the low-, medium-, and high-load expert predictions.","1) Conclusion
+The gating mechanism computes soft assignment weights for each expert using a linear layer with softmax, then produces the final forecast as a weighted average of all expert outputs.
+
+2) Explanation
+- A gating unit is trained on the full dataset after the experts are trained.
+- For each timestep, it outputs a weight vector α_t = [α_low, α_med, α_high] using a softmax over a linear transformation of the input.
+- During inference, all experts produce their own forecasts (ŷ_Low, ŷ_Medium, ŷ_High).
+- The final forecast is the weighted average: ŷ_{t+h} = α_low·ŷ_Low + α_medium·ŷ_Medium + α_high·ŷ_High.
+- The weights provide explainability by quantifying each expert's contribution per timestep.
+- In practice, the gating mechanism selects regimes accurately on synthetic data, but on real datasets (e.g., Green Fusion, Hotels) the high expert tends to dominate, reflecting the irregularity of real heat load data.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=30: Gating formula α_t = softmax(W_g x_t + b_g) and weighted average combination of expert forecasts.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=70: Gating behavior analysis on synthetic, Green Fusion, and Hotels datasets showing varying degrees of expert specialization.
+
+4) Assumptions & Scope
+- This description is specific to the MoE framework presented in the paper, which uses three experts (low, medium, high) and Informer-based architectures.
+- The gating mechanism is trained separately after expert training, not jointly.
+
+5) Suggested Next Retrieval
+MoE gating mechanism softmax weighted average expert specialization heat load forecasting",1.0,1.0,1.0,6.5969,"[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","The answer covers all required key points (softmax, weights, weighted average, low, medium, high) and directly addresses the question about how the gating mechanism combines experts.",MoE paper: gating mechanism and inference.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_008,How does the gating mechanism combine experts in the Mixture of Experts framework?,method_explanation,medium,fewshot_7,7,"The gating unit outputs softmax weights for the experts at each timestep, and the final forecast is a weighted average of the low-, medium-, and high-load expert predictions.","1) Conclusion
+The gating mechanism combines experts by computing soft assignment weights for each expert and forming the final forecast as a weighted average of the individual expert predictions.
+
+2) Explanation
+- A gating unit is trained on the full dataset after the experts have been trained.
+- For each time step, the gate outputs soft assignment weights: α = softmax(W_g x_t + b_g), where α = [α_low, α_medium, α_high].
+- During inference, all experts produce their forecasts (ŷ_low, ŷ_medium, ŷ_high).
+- The final output is a weighted average: ŷ_{t+h} = α_low·ŷ_low + α_medium·ŷ_medium + α_high·ŷ_high.
+- The weights provide explainability by quantifying each expert's contribution and showing how expert influence varies across operating regimes.
+- The gating behavior aligns with building characteristics: in the synthetic Demandlib dataset, experts were almost entirely assigned to their corresponding building regimes; in the Hotels dataset, the High expert frequently takes full responsibility; in Green Fusion, the High expert is dominant but the pattern is less clear due to real-world data irregularity.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=30: Gating mechanism formula: α = softmax(W_g x_t + b_g) and final output as weighted average of expert forecasts.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=70: Gating behavior analysis across datasets showing expert specialization patterns.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=2 | chunk=16: Gating mechanism adaptively allocates importance among experts.
+
+4) Assumptions & Scope
+- This description is specific to the MoE framework presented in the paper, which uses three experts (low, medium, high) based on clustering of annual mean heat load.
+- The gating mechanism uses a simple linear layer with softmax activation; other MoE implementations may use different gating strategies.
+
+5) Suggested Next Retrieval
+MoE gating mechanism softmax weighted average expert specialization heat load forecasting",1.0,1.0,1.0,7.536,"[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","The answer covers all required key points (softmax, weights, weighted average, low, medium, high) and directly addresses the question about how the gating mechanism combines experts in the MoE framework.",MoE paper: gating mechanism and inference.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_008,How does the gating mechanism combine experts in the Mixture of Experts framework?,method_explanation,medium,fewshot_10,10,"The gating unit outputs softmax weights for the experts at each timestep, and the final forecast is a weighted average of the low-, medium-, and high-load expert predictions.","1) Conclusion
+The gating mechanism combines experts by computing soft assignment weights for each input timestep and then forming the final forecast as a weighted average of all expert predictions.
+
+2) Explanation
+- A gating unit is trained on the full dataset after the individual experts have been trained.
+- For each timestep, the gate outputs a softmax vector α = [α_low, α_med, α_high].
+- These weights represent the contribution of each expert (Low, Medium, High) to the final forecast.
+- During inference, all experts produce their own forecasts, and the final output is a weighted average: ŷ = α_low·ŷ_low + α_med·ŷ_med + α_high·ŷ_high.
+- The gating behavior varies across datasets: on synthetic data it shows clean regime specialization, on real data it can be more mixed or dominated by one expert.
+- The weights also provide explainability by showing how expert influence changes across operating regimes.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=5 | chunk=30: Gating outputs softmax weights α = softmax(W_g x_t + b_g) and final forecast is weighted average of expert outputs.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=13 | chunk=70: Gating behavior varies across datasets, from clean specialization to mixed or dominant patterns.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=2 | chunk=16: Gating mechanism adaptively allocates importance among experts.
+
+4) Assumptions & Scope
+- This description is specific to the MoE framework presented in the paper.
+- The gating mechanism is trained separately after expert training and uses a simple linear softmax layer.
+
+5) Suggested Next Retrieval
+MoE gating mechanism softmax weighted average expert specialization heat load forecasting",1.0,1.0,1.0,6.8879,"[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","[""softmax"", ""weights"", ""weighted average"", ""low"", ""medium"", ""high""]","The answer explicitly covers all required key points: softmax weights, weighted average, and low/medium/high experts. It directly addresses the question about how the gating mechanism combines experts, providing a clear and relevant explanation.",MoE paper: gating mechanism and inference.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 6}]"
+case_009,"What overall improvements does the Mixture of Experts model report across the Demandlib, Green Fusion, and Hotels datasets?",numerical_comparison,medium,llm,,"Averaged over three input windows and three prediction horizons, the MoE reduces NRMSE by 24% on Demandlib, 13% on Green Fusion, and 10% on Hotels.","1) Conclusion  
+The Mixture of Experts (MoE) model reports consistent improvements in predictive accuracy and robustness across the Demandlib, Green Fusion, and Hotels datasets, with average reductions in Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) compared to single-model baselines.
+
+2) Explanation  
+Across the three datasets, the MoE model outperforms individual models (e.g., LSTM, GRU, or Transformer) by dynamically selecting or weighting the most suitable expert for different patterns in the data.  
+- On the **Demandlib** dataset (energy demand), MoE reduces MAE by approximately 5–10% and RMSE by 4–8% relative to the best single model.  
+- On the **Green Fusion** dataset (renewable energy forecasting), MoE achieves a 6–12% improvement in MAE and a 5–9% improvement in RMSE, particularly handling non-stationary weather-dependent patterns.  
+- On the **Hotels** dataset (occupancy or booking prediction), MoE shows a 3–7% reduction in MAE and a 4–6% reduction in RMSE, better capturing seasonal and event-driven variations.  
+
+Overall, the MoE model reports better generalization, lower error variance, and more stable performance across different data regimes (e.g., peak vs. off-peak periods) compared to any single expert model.
+
+3) Confidence / Limits  
+I am moderately confident in these reported improvements, as they are typical for MoE architectures in time-series forecasting tasks. However, exact percentage values may vary depending on the specific implementation, hyperparameters, and evaluation metrics used in the original study. Without access to the exact paper or experiment details, these figures are approximate and based on common findings in the literature.",0.0,0.5714,0.5,6.0165,"[""10"", ""Demandlib"", ""Green Fusion"", ""Hotels""]","[""24"", ""13"", ""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","The model answer does not mention the required key points (24%, 13%, 10% NRMSE reductions) and instead provides different metrics (MAE, RMSE) and approximate ranges. It partially addresses the question by naming the datasets but fails to report the correct improvements, so completeness is 0.0. The answer is somewhat relevant as it discusses MoE improvements on the datasets, but it does not directly answer the question about the reported NRMSE reductions, so answer_relevance is 0.5.",MoE paper: abstract result.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}]"
+case_009,"What overall improvements does the Mixture of Experts model report across the Demandlib, Green Fusion, and Hotels datasets?",numerical_comparison,medium,fewshot_0,0,"Averaged over three input windows and three prediction horizons, the MoE reduces NRMSE by 24% on Demandlib, 13% on Green Fusion, and 10% on Hotels.","1) Conclusion
+The Mixture of Experts (MoE) model reports consistent and statistically significant improvements over all baselines across the Demandlib, Green Fusion, and Hotels datasets.
+
+2) Explanation (bullet points)
+- On the Demandlib dataset, MoE yields large and consistently significant improvements over all baselines across all metrics and forecasting setups, with especially strong gains against PatchTST at longer horizons.
+- On the Green Fusion dataset, improvements are more moderate but remain broadly consistent, and many configurations are statistically significant, indicating that the MoE generalizes well under noisier real-world measurements.
+- On the Hotels dataset, improvements remain positive across nearly all settings, with only a small number of cells not reaching statistical significance, likely reflecting the higher variability of hotel consumption profiles.
+- Overall, the MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every dataset, confirming the robustness of the approach across heterogeneous datasets and forecasting horizons.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: page=11, chunk=58: ""In Demandlib, MoE yields large and consistently significant improvements over all baselines across metrics and forecasting setups... In Green Fusion, improvements are more moderate but remain broadly consistent... In Hotels, improvements also remain positive across nearly all settings...""
+- Source: page=12, chunk=64: ""MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every data set...""
+- Source: page=12, chunk=63: ""Overall, the results confirm the robustness of MoE across heterogeneous datasets and forecasting horizons.""
+- Source: page=10, chunk=55: ""The Mixture of Experts achieves the best overall accuracy on all datasets, benefiting from adaptive specialization.""
+
+4) Assumptions & Scope
+- The improvements are reported relative to single-model baselines including Informer, CNN-LSTM, LSTM, and PatchTST.
+- The MoE model uses three Informer experts (k=3) as the main configuration.
+- The datasets represent different levels of complexity: Demandlib (synthetic, smooth), Green Fusion (real-world, moderate noise), Hotels (real-world, high variability).
+- Statistical significance was assessed using the Wilcoxon signed-rank test.
+
+5) Suggested Next Retrieval
+- Search for ""MoE expert number comparison k=2 k=3 k=5 results table"" to see the detailed quantitative comparison of different expert counts.
+- Search for ""MoE Wilcoxon test results table Demandlib Green Fusion Hotels"" to see the full statistical significance matrix.",0.0,0.7143,0.5,7.6998,"[""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","[""24"", ""13"", ""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","The model answer does not include the required key numerical improvements (24%, 13%, 10%) or mention NRMSE, so completeness is 0.0. It is partially relevant because it discusses the datasets and general improvements, but fails to directly answer the question about the specific percentage reductions.",MoE paper: abstract result.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}]"
+case_009,"What overall improvements does the Mixture of Experts model report across the Demandlib, Green Fusion, and Hotels datasets?",numerical_comparison,medium,fewshot_1,1,"Averaged over three input windows and three prediction horizons, the MoE reduces NRMSE by 24% on Demandlib, 13% on Green Fusion, and 10% on Hotels.","1) Conclusion
+The Mixture of Experts (MoE) model reports the best overall accuracy on all three datasets (Demandlib, Green Fusion, and Hotels), with the most favorable balance of accuracy, specialization, and model size achieved when using three experts.
+
+2) Explanation
+- MoE achieves the lowest NRMSE, MAE, and sMAPE on every dataset.
+- Improvements are large and consistently significant on Demandlib, moderate but consistent on Green Fusion, and positive across nearly all settings on Hotels.
+- Three experts give the best performance; five experts do not surpass three experts consistently due to data fragmentation.
+- MoE outperforms all baselines (Informer, CNN-LSTM, LSTM, PatchTST) across all datasets and forecasting horizons.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: page=11 | chunk=58: ""In Demandlib, MoE yields large and consistently significant improvements over all baselines... In Green Fusion, improvements are more moderate but remain broadly consistent... In Hotels, improvements also remain positive across nearly all settings.""
+- Source: page=12 | chunk=64: ""MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every data set.""
+- Source: page=10 | chunk=55: ""The Mixture of Experts achieves the best overall accuracy on all datasets, benefiting from adaptive specialization.""
+
+4) Assumptions & Scope
+- The conclusion is based on the specific MoE architecture with Informer experts and k=3 experts as the main model.
+- Results are aggregated over input windows and horizons as reported in the paper.
+- The datasets vary in complexity: Demandlib (synthetic, smooth), Green Fusion (real-world, moderate), Hotels (real-world, high variability).
+
+5) Suggested Next Retrieval
+MoE k=3 expert comparison Demandlib Green Fusion Hotels NRMSE MAE sMAPE table",0.0,0.7143,0.5,6.089,"[""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","[""24"", ""13"", ""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","The model answer does not provide the specific percentage improvements (24%, 13%, 10%) or mention NRMSE, which are the key points required. It discusses general accuracy and metrics like MAE and sMAPE, but fails to directly answer the question about overall improvements reported. The answer is partly relevant as it addresses the datasets and MoE model, but lacks the precise numerical reductions.",MoE paper: abstract result.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}]"
+case_009,"What overall improvements does the Mixture of Experts model report across the Demandlib, Green Fusion, and Hotels datasets?",numerical_comparison,medium,fewshot_3,3,"Averaged over three input windows and three prediction horizons, the MoE reduces NRMSE by 24% on Demandlib, 13% on Green Fusion, and 10% on Hotels.","1) Conclusion
+The Mixture of Experts (MoE) model achieves the best overall accuracy on all three datasets, with large and statistically significant improvements on Demandlib, moderate but consistent gains on Green Fusion, and positive improvements on Hotels despite higher variability.
+
+2) Explanation
+- On Demandlib, MoE yields large and consistently significant improvements over all baselines across metrics and forecasting setups, with especially strong gains against PatchTST at longer horizons.
+- On Green Fusion, improvements are more moderate but remain broadly consistent, and many configurations are statistically significant, indicating good generalization under noisier real-world measurements.
+- On Hotels, improvements remain positive across nearly all settings, though a small number of cells do not reach statistical significance, likely reflecting the higher variability of hotel consumption profiles.
+- Across all datasets, MoE with three experts attains the lowest NRMSE, MAE, and sMAPE.
+- The relative ordering of models remains consistent across datasets, with MoE achieving the best overall accuracy on all datasets.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=11 | chunk=58: Demandlib yields large and consistently significant improvements; Green Fusion shows moderate but broadly consistent improvements; Hotels shows positive improvements across nearly all settings.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=12 | chunk=64: MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every dataset.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=10 | chunk=55: MoE achieves the best overall accuracy on all datasets, benefiting from adaptive specialization.
+
+4) Assumptions & Scope
+- This answer is based on the specific MoE design (Informer-based with k=3 experts) and the three datasets (Demandlib, Green Fusion, Hotels) as described in the provided paper.
+- The improvements are relative to single-model baselines including Informer, CNN-LSTM, LSTM, and PatchTST.
+
+5) Suggested Next Retrieval
+MoE vs baselines Wilcoxon statistical significance Demandlib Green Fusion Hotels NRMSE MAE sMAPE",0.0,0.7143,0.5,7.062,"[""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","[""24"", ""13"", ""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","The model answer does not provide the specific numerical improvements (24%, 13%, 10%) required by the key points, and only mentions improvements qualitatively. It is partially relevant as it addresses the datasets and the MoE model, but fails to give the exact NRMSE reduction percentages.",MoE paper: abstract result.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}]"
+case_009,"What overall improvements does the Mixture of Experts model report across the Demandlib, Green Fusion, and Hotels datasets?",numerical_comparison,medium,fewshot_5,5,"Averaged over three input windows and three prediction horizons, the MoE reduces NRMSE by 24% on Demandlib, 13% on Green Fusion, and 10% on Hotels.","1) Conclusion
+The Mixture of Experts (MoE) model achieves the best overall accuracy on all three datasets, with the strongest gains on Demandlib, consistent improvements on Green Fusion, and positive results on Hotels despite higher variability.
+
+2) Explanation
+- On Demandlib, MoE yields large and consistently significant improvements over all baselines, especially against PatchTST at longer horizons.
+- On Green Fusion, improvements are more moderate but remain broadly consistent, and many configurations are statistically significant, indicating good generalization under noisier real-world measurements.
+- On Hotels, improvements remain positive across nearly all settings, though some configurations do not reach statistical significance due to higher variability in hotel consumption profiles.
+- The MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every dataset.
+- The relative ordering of models remains consistent across datasets, with MoE achieving the best overall accuracy.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=11 | chunk=58: MoE yields large and consistently significant improvements over all baselines in Demandlib; moderate but consistent improvements in Green Fusion; positive improvements in Hotels.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=12 | chunk=64: MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every dataset.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=10 | chunk=55: MoE achieves the best overall accuracy on all datasets, benefiting from adaptive specialization.
+
+4) Assumptions & Scope
+- This answer is based on the specific MoE framework (Informer-based with k=3 experts) described in the provided paper.
+- The datasets vary in difficulty: Demandlib (synthetic, smooth), Green Fusion (real-world, moderate noise), Hotels (real-world, high variability).
+- The improvements are measured against baselines including Informer, CNN-LSTM, LSTM, and PatchTST.
+
+5) Suggested Next Retrieval
+MoE performance comparison Demandlib Green Fusion Hotels NRMSE MAE sMAPE statistical significance Wilcoxon",0.0,0.7143,0.5,6.8114,"[""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","[""24"", ""13"", ""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","The model answer does not provide the specific numerical improvements (24%, 13%, 10%) or mention NRMSE, which are required key points. It discusses improvements qualitatively but lacks the precise metrics from the reference. The answer is partially relevant as it addresses the datasets and MoE improvements, but fails to give the exact numbers requested.",MoE paper: abstract result.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}]"
+case_009,"What overall improvements does the Mixture of Experts model report across the Demandlib, Green Fusion, and Hotels datasets?",numerical_comparison,medium,fewshot_7,7,"Averaged over three input windows and three prediction horizons, the MoE reduces NRMSE by 24% on Demandlib, 13% on Green Fusion, and 10% on Hotels.","1) Conclusion
+The MoE model achieves the best overall accuracy on all three datasets, with the largest gains on the synthetic Demandlib dataset and smaller but consistent gains on the real-world Green Fusion and Hotels datasets.
+
+2) Explanation
+- On Demandlib, the MoE reduces NRMSE by 25.9% and MAE by 24.4% compared to the strongest baseline (Informer).
+- On Green Fusion, the MoE reduces NRMSE by 12.2% and MAE by 12.5%.
+- On Hotels, the MoE reduces NRMSE by 10.4% and MAE by 10.0%.
+- The improvements are statistically significant across most configurations.
+- The MoE with three experts consistently outperforms the single Informer model, demonstrating the benefit of expert specialization through gating.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=17 | chunk=unknown: Demandlib improvement is 25.9% NRMSE and 24.4% MAE.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=17 | chunk=unknown: Green Fusion improvement is 12.2% NRMSE and 12.5% MAE.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=17 | chunk=unknown: Hotels improvement is 10.4% NRMSE and 10.0% MAE.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=11 | chunk=58: MoE yields large and consistently significant improvements over all baselines across metrics and forecasting setups.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=10 | chunk=55: MoE achieves the best overall accuracy on all datasets.
+
+4) Assumptions & Scope
+- The reported improvements are compared to the strongest baseline (Informer) as identified in the paper.
+- The results are specific to the three datasets used in the study and may not generalize to other building types or climates.
+
+5) Suggested Next Retrieval
+MoE improvement Demandlib Green Fusion Hotels NRMSE MAE percentage reduction",0.0,0.8571,0.5,7.4015,"[""24"", ""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","[""24"", ""13"", ""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","The model answer does not provide the specific NRMSE reduction percentages (24%, 13%, 10%) required by the key points, instead giving different values (25.9%, 12.2%, 10.4%). It partially addresses the question by mentioning the datasets and NRMSE, but the numbers are incorrect, leading to a completeness score of 0.0. The answer is partly relevant as it discusses the MoE improvements on the three datasets, but fails to directly answer with the correct figures, resulting in a relevance score of 0.5.",MoE paper: abstract result.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}]"
+case_009,"What overall improvements does the Mixture of Experts model report across the Demandlib, Green Fusion, and Hotels datasets?",numerical_comparison,medium,fewshot_10,10,"Averaged over three input windows and three prediction horizons, the MoE reduces NRMSE by 24% on Demandlib, 13% on Green Fusion, and 10% on Hotels.","1) Conclusion
+The Mixture of Experts model achieves the best overall accuracy on all three datasets, with the largest gains on the synthetic Demandlib dataset and smaller but consistent improvements on the real-world Green Fusion and Hotels datasets.
+
+2) Explanation
+- On Demandlib, MoE yields large and consistently significant improvements over all baselines across metrics and forecasting setups.
+- On Green Fusion, improvements are more moderate but remain broadly consistent and statistically significant.
+- On Hotels, improvements remain positive across nearly all settings, though some configurations do not reach statistical significance due to higher variability.
+- The MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every dataset.
+- The Informer is identified as the strongest single baseline, and the mixture of three Informer experts shows positive and statistically significant improvements over the single Informer model.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=11 | chunk=58: MoE yields large improvements on Demandlib, moderate on Green Fusion, and positive on Hotels.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=12 | chunk=64: MoE with three experts attains the lowest NRMSE, MAE, and sMAPE on every dataset.
+- Source: An_Explainable_Transformer-based_Mixture_of_Expert.pdf | page=10 | chunk=55: MoE achieves the best overall accuracy on all datasets.
+
+4) Assumptions & Scope
+- The reported improvements are relative to the strongest single baseline (Informer) and other baselines (CNN-LSTM, LSTM, PatchTST).
+- The results are aggregated over input windows and forecasting horizons as described in the paper.
+
+5) Suggested Next Retrieval
+MoE Demandlib Green Fusion Hotels NRMSE MAE sMAPE percentage improvement Informer baseline",0.0,0.7143,0.5,6.1143,"[""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","[""24"", ""13"", ""10"", ""Demandlib"", ""Green Fusion"", ""Hotels"", ""NRMSE""]","The model answer does not provide the specific percentage improvements (24%, 13%, 10%) or mention NRMSE, which are required key points. It discusses improvements qualitatively but lacks the precise numerical values from the reference. The answer is partially relevant as it addresses the datasets and overall improvement, but fails to give the exact figures requested.",MoE paper: abstract result.,"[{""source_substring"": ""An_Explainable_Transformer-based_Mixture_of_Expert"", ""page"": 1}]"
+case_010,What is the main idea of the generative network for imputing long-term missing heating load data?,concept_explanation,medium,llm,,"The main idea is to impute long-term missing heating load data using only contemporaneous weather and temporal data, without relying on previously imputed heating values, thereby avoiding recursive error accumulation.","1) Conclusion  
+The main idea is to use a generative adversarial network (GAN) to realistically and accurately fill in long-term gaps in heating load data by learning the underlying temporal patterns and dependencies from observed data.
+
+2) Explanation  
+Long-term missing heating load data is a common problem in building energy monitoring due to sensor failures or data transmission issues. Traditional imputation methods (e.g., interpolation, regression) often fail for long gaps because they cannot capture complex, non-linear temporal dynamics. The generative network approach typically employs a GAN framework, where a generator learns to produce plausible heating load sequences conditioned on available surrounding data, and a discriminator tries to distinguish real from imputed sequences. Through adversarial training, the generator becomes capable of generating synthetic load data that closely matches the statistical and temporal characteristics of the real data, even over extended missing periods. This allows for robust imputation that preserves the underlying heating demand patterns, such as daily and seasonal cycles, weather dependencies, and building operation schedules.
+
+3) Confidence / Limits  
+I am confident that this is the core concept of using generative networks for long-term missing data imputation in building energy contexts. However, specific implementations may vary (e.g., using conditional GANs, recurrent neural networks, or attention mechanisms). My knowledge is based on general principles of GAN-based time-series imputation and building energy analytics, not on a particular published paper.",0.4,0.4,0.6,5.1437,"[""weather"", ""long-term missing""]","[""weather"", ""temporal data"", ""without previous imputed values"", ""avoid error accumulation"", ""long-term missing""]","The model answer discusses GAN-based imputation and temporal patterns but does not explicitly mention using only weather and temporal data without previously imputed values to avoid error accumulation, which are key points from the reference. It is partially relevant but misses the core idea of avoiding recursive error.",Imputation paper: abstract + intro.,"[{""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 1}, {""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 2}]"
+case_010,What is the main idea of the generative network for imputing long-term missing heating load data?,concept_explanation,medium,fewshot_0,0,"The main idea is to impute long-term missing heating load data using only contemporaneous weather and temporal data, without relying on previously imputed heating values, thereby avoiding recursive error accumulation.","1) Conclusion  
+The main idea of the generative network is to impute long-term missing heating load data using only weather and temporal data, without relying on previously imputed values, thereby avoiding error accumulation.
+
+2) Explanation (bullet points)  
+- Traditional methods use historical heating data as input, which causes error accumulation when missing data spans a long period.  
+- The proposed generative network fills missing data solely based on weather and temporal data, not using previous imputed values.  
+- The network is adapted from an image completion architecture (contextual encoder by Iizuka et al.) and extended to temporal heating load data.  
+- It captures structured temporal patterns influenced by weather and time, avoiding the propagation of estimation errors.
+
+3) Evidence (source/page/chunk + short summary)  
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=0 | chunk=280  
+  Summary: The abstract states that traditional methods cause error accumulation when missing data is long, and the proposed generative network fills missing data based only on weather and temporal data.  
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=3 | chunk=307  
+  Summary: The network is based on Iizuka et al.'s contextual encoder for image completion, extended to heating load data estimation using weather and temporal data.  
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=15 | chunk=375  
+  Summary: The conclusion reiterates that the generative network estimates unobserved heating load data with weather and temporal data.
+
+4) Assumptions & Scope  
+- The answer assumes the user is asking about the core innovation of the generative network described in the provided context.  
+- The scope is limited to the specific paper and its proposed method; no external sources are used.
+
+5) Suggested Next Retrieval  
+If more detail is needed, retrieve:  
+- ""generative network architecture heating load imputation""  
+- ""contextual encoder heating load data""  
+- ""comparison with Transformer Informer heating load imputation""",1.0,0.6,1.0,7.0212,"[""weather"", ""temporal data"", ""long-term missing""]","[""weather"", ""temporal data"", ""without previous imputed values"", ""avoid error accumulation"", ""long-term missing""]","The model answer clearly states the main idea, covers all required key points (weather, temporal data, without previous imputed values, avoid error accumulation, long-term missing), and directly addresses the user's question.",Imputation paper: abstract + intro.,"[{""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 1}, {""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 2}]"
+case_010,What is the main idea of the generative network for imputing long-term missing heating load data?,concept_explanation,medium,fewshot_1,1,"The main idea is to impute long-term missing heating load data using only contemporaneous weather and temporal data, without relying on previously imputed heating values, thereby avoiding recursive error accumulation.","1) Conclusion
+The main idea is to use a generative network that imputes long-term missing heating load data using only weather and temporal data, without relying on previously imputed values, thereby avoiding error accumulation.
+
+2) Explanation
+- Traditional methods use historical heating data as input, which causes error accumulation when missing gaps are long.
+- The proposed generative network is adapted from an image completion model (contextual encoder) and treats heating load data as a structured temporal sequence.
+- It uses weather and temporal data as inputs instead of previous imputed values, preventing error propagation.
+- The approach is validated on multiple heating load datasets and compared with state-of-the-art methods like Transformer and Informer.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=0 | chunk=280: Abstract states the problem of error accumulation and proposes a generative network using only weather and temporal data.
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=3 | chunk=307: Describes the generative network architecture adapted from Iizuka et al.'s contextual encoder for image completion, extended to temporal heating load data.
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=15 | chunk=375: Conclusion confirms the network estimates unobserved heating load data with weather and temporal data, and compares with SOTAs.
+
+4) Assumptions & Scope
+- The method assumes that weather and temporal data are sufficient to infer missing heating load patterns.
+- The approach is designed specifically for long-term missing data, not short gaps.
+- Validation is limited to the datasets used (e.g., When2Heat, Niš) and may not generalize to all building types.
+
+5) Suggested Next Retrieval
+generative network heating load imputation long-term missing data weather temporal contextual encoder",1.0,0.6,1.0,6.1025,"[""weather"", ""temporal data"", ""long-term missing""]","[""weather"", ""temporal data"", ""without previous imputed values"", ""avoid error accumulation"", ""long-term missing""]","The model answer clearly states the main idea, covers all required key points (weather, temporal data, without previous imputed values, avoid error accumulation, long-term missing), and directly addresses the user's question.",Imputation paper: abstract + intro.,"[{""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 1}, {""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 2}]"
+case_010,What is the main idea of the generative network for imputing long-term missing heating load data?,concept_explanation,medium,fewshot_3,3,"The main idea is to impute long-term missing heating load data using only contemporaneous weather and temporal data, without relying on previously imputed heating values, thereby avoiding recursive error accumulation.","1) Conclusion
+The main idea is to use a generative network that imputes long-term missing heating load data using only weather and temporal data, without relying on previously imputed values, thereby avoiding error accumulation.
+
+2) Explanation
+- Traditional methods use historical heating data as input, which causes error accumulation when missing gaps are long.
+- The proposed generative network avoids this by using only weather and temporal data (no previous imputed values).
+- The network is adapted from an image completion architecture (contextual encoder) to the temporal domain of heating load data.
+- It captures structured temporal patterns influenced by weather and time.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=0 | chunk=280: The abstract states the problem of error accumulation in traditional methods and proposes a generative network that fills missing data solely based on weather and temporal data.
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=3 | chunk=307: The network is based on a contextual encoder originally for image completion, extended to temporal heating load data.
+
+4) Assumptions & Scope
+- This answer is based solely on the provided context from the paper.
+- The approach is designed for long-term missing data and may not be optimal for short gaps.
+
+5) Suggested Next Retrieval
+generative network heating load imputation weather temporal data contextual encoder",1.0,0.6,1.0,5.0043,"[""weather"", ""temporal data"", ""long-term missing""]","[""weather"", ""temporal data"", ""without previous imputed values"", ""avoid error accumulation"", ""long-term missing""]","The model answer clearly states the main idea and covers all required key points: using weather and temporal data, without previous imputed values, to avoid error accumulation for long-term missing data. It directly addresses the question and provides relevant explanation and evidence.",Imputation paper: abstract + intro.,"[{""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 1}, {""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 2}]"
+case_010,What is the main idea of the generative network for imputing long-term missing heating load data?,concept_explanation,medium,fewshot_5,5,"The main idea is to impute long-term missing heating load data using only contemporaneous weather and temporal data, without relying on previously imputed heating values, thereby avoiding recursive error accumulation.","1) Conclusion
+The main idea is to use a generative network that imputes missing heating load data using only weather and temporal data, without relying on previously imputed values, thus avoiding error accumulation during long-term gaps.
+
+2) Explanation
+- Traditional methods use historical heating data as input, which causes error accumulation when gaps are long.
+- The proposed generative network avoids this by not using previous imputed values for further predictions.
+- Instead, it relies solely on weather data and temporal features to estimate missing values.
+- The network is adapted from an image completion architecture (contextual encoder) originally designed for spatial tasks, repurposed for temporal heating load data.
+- This approach is validated on multiple datasets and compared against Transformer and Informer baselines.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=0 | chunk=280: Traditional methods use historical data as input, leading to error accumulation; the proposed generative network fills missing data solely based on weather and temporal data.
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=3 | chunk=307: The network is based on Iizuka et al.'s contextual encoder originally for image completion, extended to temporal heating load data.
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=15 | chunk=375: The model estimates unobserved heating load data with weather and temporal data; experiments compare with Transformer and Informer.
+
+4) Assumptions & Scope
+- This answer is based solely on the provided context from the generative network paper.
+- The approach is specifically designed for long-term missing data, not short random gaps.
+- The model's performance may depend on the availability and quality of weather and temporal features.
+
+5) Suggested Next Retrieval
+generative network heating load imputation contextual encoder weather temporal data long-term missing",1.0,0.6,1.0,6.5223,"[""weather"", ""temporal data"", ""long-term missing""]","[""weather"", ""temporal data"", ""without previous imputed values"", ""avoid error accumulation"", ""long-term missing""]","The model answer covers all required key points: weather data, temporal data, not using previous imputed values, avoiding error accumulation, and addressing long-term missing data. It directly answers the question and provides relevant explanation and evidence.",Imputation paper: abstract + intro.,"[{""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 1}, {""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 2}]"
+case_010,What is the main idea of the generative network for imputing long-term missing heating load data?,concept_explanation,medium,fewshot_7,7,"The main idea is to impute long-term missing heating load data using only contemporaneous weather and temporal data, without relying on previously imputed heating values, thereby avoiding recursive error accumulation.","1) Conclusion
+The main idea is to use a generative network that imputes long-term missing heating load data using only weather and temporal inputs, without relying on previously imputed values, thereby avoiding error accumulation.
+
+2) Explanation
+- Traditional methods use historical heating data as input, which causes error accumulation when gaps are long.
+- The proposed generative network avoids this by not using any previously imputed values.
+- Instead, it generates the missing data solely from weather variables and temporal features.
+- The architecture is adapted from an image completion model (contextual encoder) and treats the temporal heating load pattern as a structured signal that can be reconstructed from context.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=0 | chunk=280: The abstract states that traditional methods cause error accumulation and that the proposed generative network fills missing data solely based on weather and temporal data.
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=3 | chunk=307: The network is based on a contextual encoder originally for image completion, extended to temporal heating load data.
+
+4) Assumptions & Scope
+- This answer is based solely on the provided context from the paper.
+- The method is designed specifically for long-term gaps where autoregressive approaches would fail.
+
+5) Suggested Next Retrieval
+generative network heating load imputation contextual encoder weather temporal data long-term missing",1.0,0.6,1.0,5.1389,"[""weather"", ""temporal data"", ""long-term missing""]","[""weather"", ""temporal data"", ""without previous imputed values"", ""avoid error accumulation"", ""long-term missing""]","The model answer clearly states the main idea, covers all required key points (weather, temporal data, without previous imputed values, avoid error accumulation, long-term missing), and directly addresses the user's question.",Imputation paper: abstract + intro.,"[{""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 1}, {""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 2}]"
+case_010,What is the main idea of the generative network for imputing long-term missing heating load data?,concept_explanation,medium,fewshot_10,10,"The main idea is to impute long-term missing heating load data using only contemporaneous weather and temporal data, without relying on previously imputed heating values, thereby avoiding recursive error accumulation.","1) Conclusion
+The main idea is to use a generative network that reconstructs long missing heating-load segments using only weather and temporal data, without relying on previously imputed values.
+
+2) Explanation
+- Traditional methods use historical heating data to predict missing values, but this causes error accumulation when the missing period is long.
+- The proposed generative network avoids this by using only weather and temporal data as inputs.
+- The network is adapted from an image completion architecture (contextual encoder) and treats the heating-load time series as a structured pattern.
+- This allows the model to capture both local and global temporal patterns without feeding back its own predictions.
+
+3) Evidence (source/page/chunk + short summary)
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=0 | chunk=280: The abstract states that the generative network fills missing data solely based on weather and temporal data, avoiding error accumulation.
+- Source: Imputing the long-term missing heating load data using a generative network.pdf | page=3 | chunk=307: The network is adapted from an image completion contextual encoder and uses weather and temporal data above and below the masked heating load.
+
+4) Assumptions & Scope
+- This answer is based on the specific generative network design described in the paper.
+- The approach is designed for long-term missing data, not short random gaps.
+
+5) Suggested Next Retrieval
+generative network contextual encoder heating load imputation weather temporal data error accumulation",1.0,0.6,1.0,5.1376,"[""weather"", ""temporal data"", ""long-term missing""]","[""weather"", ""temporal data"", ""without previous imputed values"", ""avoid error accumulation"", ""long-term missing""]","The answer covers all key points: weather and temporal data, no reliance on previous imputed values, avoidance of error accumulation, and focus on long-term missing data. It directly addresses the question and provides relevant explanation and evidence.",Imputation paper: abstract + intro.,"[{""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 1}, {""source_substring"": ""Imputing the long-term missing heating load data"", ""page"": 2}]"

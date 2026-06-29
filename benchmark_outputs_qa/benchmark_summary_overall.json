@@ -1,0 +1,58 @@
+[
+  {
+    "method": "llm",
+    "n_cases": 10,
+    "avg_completeness": 0.13,
+    "avg_key_point_coverage": 0.3546,
+    "avg_answer_relevance": 0.47,
+    "avg_latency_sec": 5.4188
+  },
+  {
+    "method": "fewshot_0",
+    "n_cases": 10,
+    "avg_completeness": 0.76,
+    "avg_key_point_coverage": 0.6898,
+    "avg_answer_relevance": 0.83,
+    "avg_latency_sec": 8.2736
+  },
+  {
+    "method": "fewshot_1",
+    "n_cases": 10,
+    "avg_completeness": 0.7,
+    "avg_key_point_coverage": 0.6731,
+    "avg_answer_relevance": 0.75,
+    "avg_latency_sec": 6.0004
+  },
+  {
+    "method": "fewshot_3",
+    "n_cases": 10,
+    "avg_completeness": 0.9,
+    "avg_key_point_coverage": 0.8148,
+    "avg_answer_relevance": 0.95,
+    "avg_latency_sec": 6.2783
+  },
+  {
+    "method": "fewshot_5",
+    "n_cases": 10,
+    "avg_completeness": 0.9,
+    "avg_key_point_coverage": 0.8398,
+    "avg_answer_relevance": 0.95,
+    "avg_latency_sec": 6.3243
+  },
+  {
+    "method": "fewshot_7",
+    "n_cases": 10,
+    "avg_completeness": 0.9,
+    "avg_key_point_coverage": 0.8124,
+    "avg_answer_relevance": 0.95,
+    "avg_latency_sec": 6.095
+  },
+  {
+    "method": "fewshot_10",
+    "n_cases": 10,
+    "avg_completeness": 0.82,
+    "avg_key_point_coverage": 0.7564,
+    "avg_answer_relevance": 0.91,
+    "avg_latency_sec": 5.9055
+  }
+]

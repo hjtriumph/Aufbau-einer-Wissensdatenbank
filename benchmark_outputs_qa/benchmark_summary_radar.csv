@@ -1,0 +1,8 @@
+method,completeness,key_point_coverage,answer_relevance,n_cases,avg_latency_sec
+llm,0.13,0.3546,0.47,10,5.4188
+fewshot_0,0.76,0.6898,0.83,10,8.2736
+fewshot_1,0.7,0.6731,0.75,10,6.0004
+fewshot_3,0.9,0.8148,0.95,10,6.2783
+fewshot_5,0.9,0.8398,0.95,10,6.3243
+fewshot_7,0.9,0.8124,0.95,10,6.095
+fewshot_10,0.82,0.7564,0.91,10,5.9055

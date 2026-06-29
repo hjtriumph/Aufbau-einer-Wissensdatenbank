@@ -1,0 +1,58 @@
+[
+  {
+    "method": "llm",
+    "completeness": 0.13,
+    "key_point_coverage": 0.3546,
+    "answer_relevance": 0.47,
+    "n_cases": 10,
+    "avg_latency_sec": 5.4188
+  },
+  {
+    "method": "fewshot_0",
+    "completeness": 0.76,
+    "key_point_coverage": 0.6898,
+    "answer_relevance": 0.83,
+    "n_cases": 10,
+    "avg_latency_sec": 8.2736
+  },
+  {
+    "method": "fewshot_1",
+    "completeness": 0.7,
+    "key_point_coverage": 0.6731,
+    "answer_relevance": 0.75,
+    "n_cases": 10,
+    "avg_latency_sec": 6.0004
+  },
+  {
+    "method": "fewshot_3",
+    "completeness": 0.9,
+    "key_point_coverage": 0.8148,
+    "answer_relevance": 0.95,
+    "n_cases": 10,
+    "avg_latency_sec": 6.2783
+  },
+  {
+    "method": "fewshot_5",
+    "completeness": 0.9,
+    "key_point_coverage": 0.8398,
+    "answer_relevance": 0.95,
+    "n_cases": 10,
+    "avg_latency_sec": 6.3243
+  },
+  {
+    "method": "fewshot_7",
+    "completeness": 0.9,
+    "key_point_coverage": 0.8124,
+    "answer_relevance": 0.95,
+    "n_cases": 10,
+    "avg_latency_sec": 6.095
+  },
+  {
+    "method": "fewshot_10",
+    "completeness": 0.82,
+    "key_point_coverage": 0.7564,
+    "answer_relevance": 0.91,
+    "n_cases": 10,
+    "avg_latency_sec": 5.9055
+  }
+]
